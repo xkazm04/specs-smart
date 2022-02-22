@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
       contact: {}
       title: Non-fungible token (NFT)
-      version: 3.9.2
+      version: 3.9.3
       x-logo:
         url: https://tatum.io/images/logo.svg
         altText: Tatum
@@ -22,6 +22,7 @@ info:
           <li><b>Kcs (KCS)</b></li>
           <li><b>Celo</b></li>
           <li><b>Harmony.ONE</b></li>
+          <li><b>Klaytn</b></li>
           <li><b>Tron</b></li>
           <li><b>Flow</b></li>
           <li><b>Binance Smart Chain</b></li>
@@ -55,6 +56,7 @@ paths:
         <li><b>Celo</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Flow</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Tron</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
@@ -284,6 +286,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                         - ALGO
                     name:
@@ -669,6 +672,7 @@ paths:
         <li><b>Celo</b></li>
         <li><b>Solana</b></li>
         <li><b>Harmony.ONE</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Tron</b></li>
         <li><b>Flow</b></li>
         <li><b>Binance Smart Chain</b></li>
@@ -763,6 +767,12 @@ paths:
             <td>0x45871ED5F15203C0ce791eFE5f4B5044833aE10e</td>
           </tr>
           <tr>
+            <td>KLAY</td>
+            <td>Testnet</td>
+            <td>0x80d8bac9a6901698b3749fe336bbd1385c1f98f2</td>
+            <td>0x45871ED5F15203C0ce791eFE5f4B5044833aE10e</td>
+          </tr>
+          <tr>
             <td>MATIC</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
@@ -776,6 +786,12 @@ paths:
           </tr>
           <tr>
             <td>ONE</td>
+            <td>Mainnet</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+            <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
+          </tr>
+          <tr>
+            <td>KLAY</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
             <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
@@ -824,6 +840,7 @@ paths:
                         - MATIC
                         - CELO
                         - ONE
+                        - KLAY
                         - BSC
                     to:
                       maxLength: 42
@@ -1213,6 +1230,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     tokenId:
                       description: ID of token to be created.
@@ -1313,6 +1331,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     tokenId:
                       description: ID of token to be created.
@@ -1926,6 +1945,7 @@ paths:
         <li><b>Tron</b></li>
         <li><b>Binance Smart Chain</b></li>
         <li><b>Algorand</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Solana</b></li>
         </ul>
         This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key.
@@ -1969,6 +1989,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                         - ALGO
                     to:
@@ -2292,6 +2313,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     to:
                       maxLength: 42
@@ -3096,6 +3118,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     to:
                       type: array
@@ -3193,6 +3216,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     to:
                       type: array
@@ -3850,6 +3874,7 @@ paths:
                         - KCS
                         - ONE
                         - BSC
+                        - KLAY
                         - ALGO
                     tokenId:
                       description: ID of token to be destroyed.
@@ -3907,6 +3932,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     tokenId:
                       description: ID of token to be destroyed.
@@ -4299,6 +4325,7 @@ paths:
                         - KCS
                         - CELO
                         - ONE
+                        - KLAY
                         - BSC
                     contractAddress:
                       maxLength: 42
@@ -4364,6 +4391,7 @@ paths:
                         - KCS
                         - CELO
                         - ONE
+                        - KLAY
                         - BSC
                     contractAddress:
                       maxLength: 42
@@ -4831,6 +4859,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     tokenId:
                       description: ID of token to be updated.
@@ -4893,6 +4922,7 @@ paths:
                         - MATIC
                         - KCS
                         - ONE
+                        - KLAY
                         - BSC
                     tokenId:
                       description: ID of token to be updated.
@@ -5570,6 +5600,7 @@ paths:
             enum:
               - ETH
               - ONE
+              - KLAY
               - CELO
               - TRON
               - FLOW
@@ -5761,6 +5792,7 @@ paths:
               - MATIC
               - KCS
               - ONE
+              - KLAY
               - CELO
               - TRON
               - FLOW
@@ -6645,6 +6677,7 @@ paths:
               - MATIC
               - KCS
               - ONE
+              - KLAY
               - CELO
               - TRON
               - FLOW
@@ -6839,6 +6872,7 @@ paths:
               - MATIC
               - KCS
               - ONE
+              - KLAY
               - CELO
               - BSC
         - description: Token ID
@@ -7033,6 +7067,7 @@ paths:
               - KCS
               - SOL
               - ONE
+              - KLAY
               - CELO
               - TRON
               - FLOW
@@ -7237,6 +7272,7 @@ paths:
               - KCS
               - SOL
               - ONE
+              - KLAY
               - CELO
               - TRON
               - BSC
