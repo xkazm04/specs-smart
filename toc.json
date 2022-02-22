@@ -1,0 +1,43 @@
+{
+  "items": [
+    {
+      "type": "item",
+      "title": "Getting started with Token/Smart contracts",
+      "uri": "docs/introduction.md"
+    },
+    {
+      "type": "divider",
+      "title": "APIS"
+    },
+    {
+      "type": "item",
+      "title": "Fungible token",
+      "uri": "reference/ERC20.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Non-fungible token (NFT)",
+      "uri": "reference/NFT.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Multitoken",
+      "uri": "reference/Multitoken.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Marketplace",
+      "uri": "reference/Marketplace.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Auctions",
+      "uri": "reference/Auctions.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Custodial wallets",
+      "uri": "reference/Custodial.yaml"
+    }
+  ]
+}

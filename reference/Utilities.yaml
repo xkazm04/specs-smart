@@ -1,0 +1,638 @@
+openapi: 3.1.0
+info:
+  contact: {}
+  title: Web3 Utilities
+  version: 3.9.2
+  x-logo:
+    url: 'https://tatum.io/images/logo.svg'
+    altText: Tatum
+  description: |-
+        Utilities to make app development easier
+servers:
+  - url: 'https://api-eu1.tatum.io'
+  - url: 'https://api-us-west1.tatum.io'
+tags:
+  - description: ''
+    name: Smart contract
+  - description: ''
+    name: Transaction
+paths:
+  /v3/blockchain/estimate:
+    post:
+      description: |
+        <h4>2 credits per API call.</h4><br/>
+        <p>Estimate current transaction fee for different operations.<br/>
+        Supported blockchains:
+        <ul>
+        <li>Bitcoin</li>
+        <li>Litecoin</li>
+        <li>Harmony.ONE</li>
+        <li>The XDC Network</li>
+        <li>Ethereum</li>
+        <li>Celo</li>
+        <li>Binance Smart Chain</li>
+        <li>Polygon</li>
+        <li>Elrond</li>
+        </ul>
+        </p>
+      operationId: EstimateFeeBlockchain
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  required:
+                    - chain
+                    - type
+                  properties:
+                    chain:
+                      type: string
+                      description: Blockchain to estimate fee for.
+                      enum:
+                        - CELO
+                        - ETH
+                        - BSC
+                        - XDC
+                        - ONE
+                        - MATIC
+                    type:
+                      type: string
+                      description: Type of transaction
+                      enum:
+                        - DEPLOY_ERC20
+                        - DEPLOY_NFT
+                        - MINT_NFT
+                        - BURN_NFT
+                        - TRANSFER_NFT
+                        - TRANSFER_ERC20
+                        - DEPLOY_CUSTODIAL_WALLET
+                        - DEPLOY_AUCTION
+                        - DEPLOY_MARKETPLACE
+                    sender:
+                      type: string
+                      maxLength: 42
+                      minLength: 42
+                      example: '0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef'
+                      description: 'Sender address, if type is TRANSFER_ERC20'
+                    recipient:
+                      description: 'Blockchain address to send assets, if type is TRANSFER_ERC20'
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      maxLength: 42
+                      minLength: 42
+                      type: string
+                    contractAddress:
+                      description: 'Contract address of ERC20 token, if type is TRANSFER_ERC20'
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      maxLength: 42
+                      minLength: 42
+                      type: string
+                    amount:
+                      description: 'Amount to be sent in ERC20, if type is TRANSFER_ERC20'
+                      example: '100000'
+                      pattern: '^[+]?((\d+(\.\d*)?)|(\.\d+))$'
+                      type: string
+                    enableFungibleTokens:
+                      type: boolean
+                      example: false
+                      description: 'If address should support ERC20 tokens, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET.'
+                    enableNonFungibleTokens:
+                      type: boolean
+                      example: false
+                      description: 'If address should support ERC721 tokens, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET option.'
+                    enableSemiFungibleTokens:
+                      type: boolean
+                      example: false
+                      description: 'If address should support ERC1155 tokens, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET option.'
+                    enableBatchTransactions:
+                      type: boolean
+                      example: false
+                      description: 'If address should support batch transfers of the assets, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET option.'
+                - type: object
+                  required:
+                    - chain
+                    - type
+                    - sender
+                    - recipient
+                    - contractAddress
+                    - custodialAddress
+                    - amount
+                    - tokenType
+                  properties:
+                    chain:
+                      type: string
+                      description: Blockchain to estimate fee for.
+                      enum:
+                        - CELO
+                        - ETH
+                        - BSC
+                        - XDC
+                        - ONE
+                        - MATIC
+                    type:
+                      type: string
+                      description: Type of transaction
+                      enum:
+                        - TRANSFER_CUSTODIAL
+                    sender:
+                      type: string
+                      maxLength: 42
+                      example: '0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef'
+                      minLength: 42
+                      description: Sender address
+                    recipient:
+                      description: Blockchain address to send assets
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      maxLength: 42
+                      minLength: 42
+                      type: string
+                    contractAddress:
+                      description: Contract address of the token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      maxLength: 42
+                      minLength: 42
+                      type: string
+                    custodialAddress:
+                      description: Contract address of custodial wallet contract
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      maxLength: 42
+                      minLength: 42
+                      type: string
+                    amount:
+                      description: 'Amount to be sent in native asset, ERC20 or ERC1155'
+                      example: '100000'
+                      pattern: '^[+]?((\d+(\.\d*)?)|(\.\d+))$'
+                      type: string
+                    tokenType:
+                      description: 'Type of the token to transfer from custodial wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset'
+                      example: 0
+                      type: number
+                      minimum: 0
+                      maximum: 3
+                - type: object
+                  required:
+                    - chain
+                    - type
+                    - fromAddress
+                    - to
+                  properties:
+                    chain:
+                      type: string
+                      description: Blockchain to estimate fee for.
+                      enum:
+                        - BTC
+                        - LTC
+                    type:
+                      type: string
+                      description: Type of transaction
+                      enum:
+                        - TRANSFER
+                    fromAddress:
+                      description: Array of addresses. Tatum will automatically scan last 100 transactions for each address and will use all of the unspent values. We advise to use this option if you have 1 address per 1 transaction only.
+                      type: array
+                      items:
+                        type: string
+                        example: 2N9bBiH2qrTDrPCzrNhaFGdkNKS86PJAAAS
+                        minimum: 30
+                        maximum: 50
+                    to:
+                      description: Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee.
+                      type: array
+                      items:
+                        type: object
+                        required:
+                          - address
+                          - value
+                        properties:
+                          address:
+                            description: Destination address.
+                            type: string
+                            example: 2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7
+                            minimum: 30
+                            maximum: 60
+                          value:
+                            description: 'Amount to be sent, in BTC.'
+                            type: number
+                            minimum: 0
+                            example: 0.02969944
+                - type: object
+                  required:
+                    - chain
+                    - type
+                    - fromUTXO
+                    - to
+                  properties:
+                    chain:
+                      type: string
+                      description: Blockchain to estimate fee for.
+                      enum:
+                        - BTC
+                        - LTC
+                    type:
+                      type: string
+                      description: Type of transaction
+                      enum:
+                        - TRANSFER
+                    fromUTXO:
+                      description: 'Array of transaction hashes, index of UTXO in it and corresponding private keys. Use this option if you want to calculate amount to send manually. Either fromUTXO or fromAddress must be present.'
+                      type: array
+                      items:
+                        type: object
+                        required:
+                          - txHash
+                          - index
+                        properties:
+                          txHash:
+                            description: Transaction hash of the UTXO to be spent.
+                            type: string
+                            example: 53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc
+                            minLength: 64
+                            maxLength: 64
+                          index:
+                            description: Index of the UTXO to be spent.
+                            type: number
+                            example: 0
+                            minimum: 0
+                            maximum: 2147483647
+                    to:
+                      description: Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee.
+                      type: array
+                      items:
+                        type: object
+                        required:
+                          - address
+                          - value
+                        properties:
+                          address:
+                            description: Destination address.
+                            type: string
+                            example: 2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7
+                            minimum: 30
+                            maximum: 60
+                          value:
+                            description: 'Amount to be sent, in BTC.'
+                            type: number
+                            minimum: 0
+                            example: 0.02969944
+        required: true
+      responses:
+        '200':
+          headers: {}
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    required:
+                      - fast
+                      - medium
+                      - slow
+                    properties:
+                      fast:
+                        type: string
+                        description: 'Transaction fee in BTC|LTC to be paid, if transaction should be included in next 1-2 blocks.'
+                        example: '0.006584'
+                      medium:
+                        type: string
+                        description: 'Transaction fee in BTC|LTC to be paid, if transaction should be included in next 5-6 blocks.'
+                        example: '0.004584'
+                      slow:
+                        type: string
+                        description: 'Transaction fee in BTC|LTC to be paid, if transaction should be included in next 7+ blocks.'
+                        example: '0.002584'
+                  - type: object
+                    required:
+                      - gasLimit
+                      - gasPrice
+                    properties:
+                      gasLimit:
+                        type: number
+                        description: Gas limit for transaction in gas price.
+                        example: 40000
+                      gasPrice:
+                        type: number
+                        description: Gas price in Gwei.
+                        example: 20
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                properties:
+                  errorCode:
+                    example: validation.failed
+                    description: validation.failed
+                    type: string
+                  message:
+                    example: Request validation failed. Please see data for additional information.
+                    description: Request validation failed. Please see data for additional information.
+                    type: string
+                  statusCode:
+                    example: 400
+                    description: '400'
+                    type: number
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - target
+                      properties:
+                        target:
+                          type: object
+                          additionalProperties: true
+                          description: Request object present in the body of the HTTP request
+                          example:
+                            property: 12345
+                        value:
+                          type: number
+                          description: 'Value of the target object which validation is wrong. Can be of any data type, example here is using type number.'
+                          example: 12345
+                        property:
+                          type: string
+                          description: Property name of the target object which validation is wrong
+                          example: property1
+                        constraints:
+                          type: object
+                          additionalProperties: true
+                          description: 'Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint.'
+                          example:
+                            min: property1 must not be less than 50000
+                required:
+                  - errorCode
+                  - message
+                  - statusCode
+                  - data
+                type: object
+          description: Bad Request. Validation failed for the given object in the HTTP Body or Request parameters.
+        '401':
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      errorCode:
+                        example: subscription.not.active
+                        description: subscription.not.active
+                        type: string
+                      message:
+                        example: Subscription not active anymore.
+                        description: Subscription not active anymore.
+                        type: string
+                      statusCode:
+                        example: 401
+                        description: '401'
+                        type: number
+                    required:
+                      - errorCode
+                      - message
+                      - statusCode
+                    type: object
+                  - properties:
+                      errorCode:
+                        example: subscription.invalid
+                        description: subscription.invalid
+                        type: string
+                      message:
+                        example: 'Unable to find valid subscription for ''${apiKey}'''
+                        description: 'Unable to find valid subscription for ''${apiKey}'''
+                        type: string
+                      statusCode:
+                        example: 401
+                        description: '401'
+                        type: number
+                    required:
+                      - errorCode
+                      - message
+                      - statusCode
+                    type: object
+          description: Unauthorized. Not valid or inactive subscription key present in the HTTP Header.
+        '403':
+          description: 'Forbidden. The request is authenticated, but it is not possible to perform the required operation due to a logical error or invalid permissions.'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      message:
+                        example: Forbidden
+                        description: Forbidden
+                        type: string
+                      statusCode:
+                        example: 403
+                        description: '403'
+                        type: number
+                    required:
+                      - statusCode
+                      - message
+                    type: object
+        '500':
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    example: Internal server error
+                    description: Internal server error
+                    type: string
+                  statusCode:
+                    example: 500
+                    description: '500'
+                    type: number
+                required:
+                  - statusCode
+                  - message
+                type: object
+          description: Internal server error. There was an error on the server while processing the request.
+      security:
+        - X-Api-Key: []
+      summary: Estimate fee for transaction
+      tags:
+        - Transaction
+  '/v3/blockchain/sc/address/{chain}/{hash}':
+    get:
+      description: <h4>1 credit per API call.</h4><br/><p>Get smart contract address from deploy transaction.</p>
+      operationId: SCGetContractAddress
+      parameters:
+        - description: Blockchain to work with
+          in: path
+          name: chain
+          required: true
+          schema:
+            type: string
+            enum:
+              - ETH
+              - ONE
+              - CELO
+              - TRON
+              - MATIC
+              - BSC
+        - description: Transaction hash
+          in: path
+          name: hash
+          required: true
+          schema:
+            type: string
+            example: '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contractAddress:
+                    type: string
+                    description: Address of the smart contract.
+                    example: '0xc21C81ef03f98898Fb155E00C364e8a7b9D158b8'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                properties:
+                  errorCode:
+                    example: validation.failed
+                    description: validation.failed
+                    type: string
+                  message:
+                    example: Request validation failed. Please see data for additional information.
+                    description: Request validation failed. Please see data for additional information.
+                    type: string
+                  statusCode:
+                    example: 400
+                    description: '400'
+                    type: number
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - target
+                      properties:
+                        target:
+                          type: object
+                          additionalProperties: true
+                          description: Request object present in the body of the HTTP request
+                          example:
+                            property: 12345
+                        value:
+                          type: number
+                          description: 'Value of the target object which validation is wrong. Can be of any data type, example here is using type number.'
+                          example: 12345
+                        property:
+                          type: string
+                          description: Property name of the target object which validation is wrong
+                          example: property1
+                        constraints:
+                          type: object
+                          additionalProperties: true
+                          description: 'Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint.'
+                          example:
+                            min: property1 must not be less than 50000
+                required:
+                  - errorCode
+                  - message
+                  - statusCode
+                  - data
+                type: object
+          description: Bad Request. Validation failed for the given object in the HTTP Body or Request parameters.
+        '401':
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      errorCode:
+                        example: subscription.not.active
+                        description: subscription.not.active
+                        type: string
+                      message:
+                        example: Subscription not active anymore.
+                        description: Subscription not active anymore.
+                        type: string
+                      statusCode:
+                        example: 401
+                        description: '401'
+                        type: number
+                    required:
+                      - errorCode
+                      - message
+                      - statusCode
+                    type: object
+                  - properties:
+                      errorCode:
+                        example: subscription.invalid
+                        description: subscription.invalid
+                        type: string
+                      message:
+                        example: 'Unable to find valid subscription for ''${apiKey}'''
+                        description: 'Unable to find valid subscription for ''${apiKey}'''
+                        type: string
+                      statusCode:
+                        example: 401
+                        description: '401'
+                        type: number
+                    required:
+                      - errorCode
+                      - message
+                      - statusCode
+                    type: object
+          description: Unauthorized. Not valid or inactive subscription key present in the HTTP Header.
+        '403':
+          description: 'Forbidden. The request is authenticated, but it is not possible to required perform operation due to logical error or invalid permissions.'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      errorCode:
+                        description: tx.missing
+                        example: tx.missing
+                        type: string
+                      message:
+                        description: No such tx.
+                        example: No such tx.
+                        type: string
+                      statusCode:
+                        description: '403'
+                        example: 403
+                        type: number
+                    required:
+                      - errorCode
+                      - message
+                      - statusCode
+                    type: object
+        '500':
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    example: Internal server error
+                    description: Internal server error
+                    type: string
+                  statusCode:
+                    example: 500
+                    description: '500'
+                    type: number
+                required:
+                  - statusCode
+                  - message
+                type: object
+          description: Internal server error. There was an error on the server while processing the request.
+      security:
+        - X-Api-Key: []
+      summary: Get contract address from transaction
+      tags:
+        - Smart contract
+components:
+  securitySchemes:
+    X-Api-Key:
+      description: |
+        To maintain the highest security level, Tatum requires X-API-Key HTTP header.
+        This X-API-Key represents identification of the plan and can be used by 1 developer or per environment.
+        Each X-API-Key is bound to the test or production blockchains.
+      in: header
+      name: x-api-key
+      type: apiKey
