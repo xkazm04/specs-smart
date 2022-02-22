@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   contact: {}
   title: Multitoken
-  version: 3.9.2
+  version: 3.9.3
   x-logo:
     url: 'https://tatum.io/images/logo.svg'
     altText: Tatum
@@ -22,6 +22,7 @@ info:
                 <li><b>Kcs (KCS)</b></li>
                 <li><b>Celo</b></li>
                 <li><b>Harmony.ONE</b></li>
+                <li><b>Klaytn</b></li>
                 <li><b>Binance Smart Chain</b></li>
                 <li><b>Algorand</b></li>
                 </ul>
@@ -49,6 +50,7 @@ paths:
         <li><b>Kcs (KCS)</b></li>
         <li><b>Celo</b></li>
         <li><b>Harmony.ONE</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
 
@@ -86,6 +88,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     uri:
                       description: URI of the Multi Token token
@@ -137,6 +140,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     uri:
                       description: URI of the Multi Token token
@@ -440,6 +444,7 @@ paths:
         <li><b>Celo</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Binance Smart Chain</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Algorand</b></li>
         </ul>
         This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key.
@@ -476,6 +481,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                         - ALGO
                     tokenId:
@@ -555,6 +561,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     tokenId:
                       description: ID of token to be created.
@@ -925,6 +932,7 @@ paths:
         <li><b>Kcs (KCS)</b></li>
         <li><b>Celo</b></li>
         <li><b>Harmony.ONE</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
         This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key.
@@ -961,6 +969,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     to:
                       type: array
@@ -1049,6 +1058,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     to:
                       type: array
@@ -1465,6 +1475,7 @@ paths:
         <li><b>Kcs (Matic)</b></li>
         <li><b>Celo</b></li>
         <li><b>Harmony.ONE</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Binance Smart Chain</b></li>
         <li><b>Algorand</b></li>
         </ul>
@@ -1502,6 +1513,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                         - ALGO
                     account:
@@ -1575,6 +1587,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     account:
                       maxLength: 42
@@ -1936,6 +1949,7 @@ paths:
         <li><b>Polygon (Matic)</b></li>
         <li><b>Kcs (KCS)</b></li>
         <li><b>Celo</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
@@ -1973,6 +1987,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     account:
                       maxLength: 42
@@ -2053,6 +2068,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     account:
                       maxLength: 42
@@ -2432,6 +2448,7 @@ paths:
         <li><b>Polygon (Matic)</b></li>
         <li><b>Kcs (KCS)</b></li>
         <li><b>Celo</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Binance Smart Chain</b></li>
         <li><b>Algorand</b></li>
@@ -2470,6 +2487,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                         - ALGO
                     to:
@@ -2599,6 +2617,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     to:
                       maxLength: 42
@@ -2909,6 +2928,7 @@ paths:
         <li><b>Polygon (Matic)</b></li>
         <li><b>Kcs (KCS)</b></li>
         <li><b>Celo</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
@@ -2946,6 +2966,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     to:
                       maxLength: 42
@@ -3024,6 +3045,7 @@ paths:
                         - ONE
                         - MATIC
                         - KCS
+                        - KLAY
                         - BSC
                     to:
                       maxLength: 42
@@ -3409,6 +3431,7 @@ paths:
         <li><b>Polygon (Matic)</b></li>
         <li><b>Kcs (KCS)</b></li>
         <li><b>Celo</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
@@ -3447,6 +3470,7 @@ paths:
                         - KCS
                         - CELO
                         - ONE
+                        - KLAY
                         - BSC
                     contractAddress:
                       maxLength: 42
@@ -3511,6 +3535,7 @@ paths:
                         - MATIC
                         - KCS
                         - CELO
+                        - KLAY
                         - ONE
                         - BSC
                     contractAddress:
@@ -4737,6 +4762,7 @@ paths:
               - KCS
               - ONE
               - CELO
+              - KLAY
               - BSC
         - description: Account address
           in: path
@@ -4937,6 +4963,7 @@ paths:
               - KCS
               - ONE
               - CELO
+              - KLAY
               - BSC
         - description: Multi Token contract address
           in: path
@@ -5138,6 +5165,7 @@ paths:
               - KCS
               - ONE
               - CELO
+              - KLAY
               - BSC
         - description: Token ID
           in: path
