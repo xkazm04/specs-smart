@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   contact: {}
   title: Custodial wallets
-  version: 3.9.2
+  version: 3.9.3
   x-logo:
     url: 'https://tatum.io/images/logo.svg'
     altText: Tatum
@@ -45,6 +45,7 @@ paths:
         <li>Harmony.ONE</li>
         <li>Ethereum</li>
         <li>Celo</li>
+        <li>Klaytn</li>
         <li>TRON - without 1155</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -597,6 +598,7 @@ paths:
         <li>Celo</li>
         <li>Polygon (Matic)</li>
         <li>Harmony.ONE</li>
+        <li>Klaytn</li>
         <li>XDC Network (XinFin)</li>
         <li>Tron</li>
         </ul>
@@ -627,6 +629,7 @@ paths:
                         - MATIC
                         - BSC
                         - ONE
+                        - KLAY
                         - CELO
                       example: MATIC
                       type: string
@@ -660,6 +663,7 @@ paths:
                         - MATIC
                         - BSC
                         - ONE
+                        - KLAY
                         - XDC
                       example: MATIC
                       type: string
@@ -715,6 +719,7 @@ paths:
                         - ETH
                         - ONE
                         - XDC
+                        - KLAY
                         - BSC
                       example: MATIC
                       type: string
@@ -1316,6 +1321,7 @@ paths:
         <li>Ethereum</li>
         <li>Celo</li>
         <li>Harmony.ONE</li>
+        <li>Klaytn</li>
         <li>XDC Network (XinFin)</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -1335,6 +1341,7 @@ paths:
                         - ONE
                         - XDC
                         - BSC
+                        - KLAY
                         - MATIC
                       example: ETH
                       type: string
@@ -1414,6 +1421,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - XDC
                         - MATIC
@@ -1845,6 +1853,7 @@ paths:
         <li>Ethereum</li>
         <li>Celo</li>
         <li>TRON</li>
+        <li>Klaytn</li>
         <li>XDC Network (XinFin)</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -1862,6 +1871,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - XDC
                         - BSC
                         - MATIC
@@ -1944,6 +1954,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - XDC
                         - BSC
                         - MATIC
@@ -2515,6 +2526,7 @@ paths:
         <li>Ethereum</li>
         <li>Celo</li>
         <li>Tron</li>
+        <li>Klaytn</li>
         <li>Polygon (Matic)</li>
         </ul>
         </p>
@@ -2531,6 +2543,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - XDC
                         - MATIC
@@ -2623,6 +2636,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - XDC
                         - MATIC
