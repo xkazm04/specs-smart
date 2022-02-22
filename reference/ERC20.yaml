@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   contact: {}
   title: Fungible token
-  version: 3.9.2
+  version: 3.9.3
   x-logo:
     url: 'https://tatum.io/images/logo.svg'
     altText: Tatum
@@ -16,6 +16,7 @@ info:
       <li><b>Kcs (KCS)</b></li>
       <li><b>Binance Smart Chain</b></li>
       <li><b>Celo</b></li>
+      <li><b>Klaytn</b></li>
       <li><b>Harmony.ONE</b></li>
       <li><b>XDC Network (XinFin)</b></li>
       <li><b>Algorand</b></li>
@@ -73,6 +74,7 @@ paths:
                         - ETH
                         - BSC
                         - MATIC
+                        - KLAY
                         - XDC
                         - ONE
                         - ALGO
@@ -738,6 +740,7 @@ paths:
                         - ETH
                         - BSC
                         - MATIC
+                        - KLAY
                         - XDC
                         - ONE
                     amount:
@@ -1203,6 +1206,7 @@ paths:
                         - BSC
                         - MATIC
                         - XDC
+                        - KLAY
                         - ONE
                         - ALGO
                     amount:
@@ -1222,6 +1226,23 @@ paths:
                       example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
                       minLength: 66
                       description: 'Private key of sender address. Private key, or signature Id must be present.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     nonce:
                       type: number
                       minimum: 0
@@ -1260,6 +1281,23 @@ paths:
                       format: uuid
                       example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
                       description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     nonce:
                       type: number
                       minimum: 0
@@ -1294,6 +1332,23 @@ paths:
                       example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
                       minLength: 66
                       description: 'Private key of sender address. Private key, or signature Id must be present.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     nonce:
                       type: number
                       minimum: 0
@@ -1329,6 +1384,23 @@ paths:
                       format: uuid
                       example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
                       description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     nonce:
                       type: number
                       minimum: 0
@@ -1399,6 +1471,23 @@ paths:
                       description: Address of ERC20 token
                       example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
                       type: string
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     signatureId:
                       type: string
                       minLength: 36
@@ -1626,6 +1715,7 @@ paths:
                         - ETH
                         - BSC
                         - MATIC
+                        - KLAY
                         - ONE
                     amount:
                       description: Amount to be approved for the spender.
@@ -1644,6 +1734,23 @@ paths:
                       description: Address of ERC-20 token
                       example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
                       type: string
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     fromPrivateKey:
                       type: string
                       maxLength: 66
@@ -1670,6 +1777,7 @@ paths:
                         - ETH
                         - BSC
                         - MATIC
+                        - KLAY
                         - ONE
                     amount:
                       description: Amount to be approved for the spender.
@@ -1695,6 +1803,23 @@ paths:
                       format: uuid
                       example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
                       description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     nonce:
                       type: number
                       minimum: 0
@@ -1736,6 +1861,23 @@ paths:
                       example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
                       minLength: 66
                       description: 'Private key of sender address. Private key, or signature Id must be present.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     nonce:
                       type: number
                       minimum: 0
@@ -1786,6 +1928,23 @@ paths:
                       format: uuid
                       example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
                       description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
                     nonce:
                       type: number
                       minimum: 0
@@ -2094,6 +2253,7 @@ paths:
                         - ETH
                         - BSC
                         - MATIC
+                        - KLAY
                         - XDC
                         - ONE
                     to:
@@ -2164,6 +2324,7 @@ paths:
                         - ETH
                         - BSC
                         - MATIC
+                        - KLAY
                         - XDC
                         - ONE
                     to:
