@@ -38,6 +38,7 @@ paths:
         <ul>
         <li>Binance Smart Chain</li>
         <li>Harmony.ONE</li>
+        <li>Klaytn</li>
         <li>Ethereum</li>
         <li>Celo</li>
         <li>Polygon (Matic)</li>
@@ -56,6 +57,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -111,6 +113,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -465,6 +468,7 @@ paths:
         <li>Binance Smart Chain</li>
         <li>Harmony.ONE</li>
         <li>Ethereum</li>
+        <li>Klaytn</li>
         <li>Celo</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -482,6 +486,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -578,6 +583,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -1054,6 +1060,7 @@ paths:
         <li>Binance Smart Chain</li>
         <li>Harmony.ONE</li>
         <li>Ethereum</li>
+        <li>Klaytn</li>
         <li>Celo</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -1078,6 +1085,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -1150,6 +1158,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -1553,6 +1562,7 @@ paths:
         <li>Binance Smart Chain</li>
         <li>Harmony.ONE</li>
         <li>Ethereum</li>
+        <li>Klaytn</li>
         <li>Celo</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -1577,6 +1587,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -1638,6 +1649,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -2007,6 +2019,7 @@ paths:
         <li>Binance Smart Chain</li>
         <li>Harmony.ONE</li>
         <li>Ethereum</li>
+        <li>Klaytn</li>
         <li>Celo</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -2031,6 +2044,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -2092,6 +2106,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -2461,6 +2476,7 @@ paths:
         <li>Binance Smart Chain</li>
         <li>Harmony.ONE</li>
         <li>Ethereum</li>
+        <li>Klaytn</li>
         <li>Celo</li>
         <li>Polygon (Matic)</li>
         </ul>
@@ -2478,6 +2494,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -2544,6 +2561,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -2933,6 +2951,7 @@ paths:
             enum:
               - ETH
               - ONE
+              - KLAY
               - CELO
               - MATIC
               - BSC
@@ -3152,6 +3171,7 @@ paths:
             enum:
               - ETH
               - ONE
+              - KLAY
               - CELO
               - MATIC
               - BSC
@@ -3325,6 +3345,7 @@ paths:
             enum:
               - ETH
               - ONE
+              - KLAY
               - CELO
               - MATIC
               - BSC
@@ -3514,6 +3535,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -3569,6 +3591,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -3920,6 +3943,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -3975,6 +3999,7 @@ paths:
                       enum:
                         - ETH
                         - ONE
+                        - KLAY
                         - BSC
                         - MATIC
                       example: ETH
@@ -4324,6 +4349,7 @@ paths:
             enum:
               - ETH
               - ONE
+              - KLAY
               - CELO
               - MATIC
               - BSC
