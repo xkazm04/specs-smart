@@ -32,6 +32,7 @@ paths:
         <li>Celo</li>
         <li>Binance Smart Chain</li>
         <li>Polygon</li>
+        <li>Klaytn</li>
         <li>Elrond</li>
         </ul>
         </p>
@@ -55,6 +56,7 @@ paths:
                         - BSC
                         - XDC
                         - ONE
+                        - KLAY
                         - MATIC
                     type:
                       type: string
@@ -66,7 +68,6 @@ paths:
                         - BURN_NFT
                         - TRANSFER_NFT
                         - TRANSFER_ERC20
-                        - DEPLOY_CUSTODIAL_WALLET
                         - DEPLOY_AUCTION
                         - DEPLOY_MARKETPLACE
                     sender:
@@ -92,22 +93,89 @@ paths:
                       example: '100000'
                       pattern: '^[+]?((\d+(\.\d*)?)|(\.\d+))$'
                       type: string
-                    enableFungibleTokens:
-                      type: boolean
-                      example: false
-                      description: 'If address should support ERC20 tokens, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET.'
-                    enableNonFungibleTokens:
-                      type: boolean
-                      example: false
-                      description: 'If address should support ERC721 tokens, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET option.'
-                    enableSemiFungibleTokens:
-                      type: boolean
-                      example: false
-                      description: 'If address should support ERC1155 tokens, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET option.'
-                    enableBatchTransactions:
-                      type: boolean
-                      example: false
-                      description: 'If address should support batch transfers of the assets, it should be marked as true. Valid only for DEPLOY_CUSTODIAL_WALLET option.'
+                - type: object
+                  required:
+                    - chain
+                    - type
+                    - sender
+                    - recipients
+                    - tokenIds
+                    - urls
+                  properties:
+                    chain:
+                      type: string
+                      description: Blockchain to estimate fee for.
+                      enum:
+                        - CELO
+                        - ETH
+                        - BSC
+                        - XDC
+                        - ONE
+                        - MATIC
+                        - KLAY
+                    type:
+                      type: string
+                      description: Type of transaction
+                      enum:
+                        - MINT_NFT_BATCH
+                    sender:
+                      type: string
+                      maxLength: 42
+                      example: '0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef'
+                      description: Address of the minter
+                    recipients:
+                      type: array
+                      description: Blockchain addresses to mint tokens to
+                      items:
+                        example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                        maxLength: 42
+                        type: string
+                    contractAddress:
+                      description: Contract address of NFT token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      maxLength: 42
+                      type: string
+                    tokenIds:
+                      type: array
+                      description: Token IDs
+                      items:
+                        example: '100000'
+                        pattern: '^[+]?((\d+(\.\d*)?)|(\.\d+))$'
+                        type: string
+                    urls:
+                      type: array
+                      description: Metadata URLs
+                      items:
+                        pattern: '^[+]?((\d+(\.\d*)?)|(\.\d+))$'
+                        type: string
+                - type: object
+                  required:
+                    - chain
+                    - type
+                    - batchCount
+                  properties:
+                    chain:
+                      type: string
+                      description: Blockchain to estimate fee for.
+                      enum:
+                        - CELO
+                        - ETH
+                        - BSC
+                        - XDC
+                        - ONE
+                        - MATIC
+                        - KLAY
+                    type:
+                      type: string
+                      description: Type of transaction
+                      enum:
+                        - DEPLOY_CUSTODIAL_WALLET_BATCH
+                    batchCount:
+                      description: Number of addresses tto create
+                      example: 10
+                      minimum: 1
+                      maximum: 300
+                      type: number
                 - type: object
                   required:
                     - chain
@@ -128,6 +196,7 @@ paths:
                         - BSC
                         - XDC
                         - ONE
+                        - KLAY
                         - MATIC
                     type:
                       type: string
