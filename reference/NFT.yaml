@@ -70,7 +70,7 @@ paths:
         </p>
       operationId: NftDeployErc721
       parameters:
-        - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
+        - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.'
           in: header
           name: x-testnet-type
           required: false
@@ -808,13 +808,13 @@ paths:
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
             <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
           </tr>
-
+        If there are not enough coins on any testnet address, feel free to send coins here and help Tatum community.
         </table>
         To add ETH mainnet smart contract contact sales@tatum.io.
         If there will be a low amount of coins on any testnet address you are free to send coins to the address. In future we will provide also addresses and smart contracts for the mainnet version.        </p>
       operationId: NftMintErc721
       parameters:
-        - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
+        - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations. For mainnet this value is ignored.
           in: header
           name: x-testnet-type
           required: false
@@ -2770,7 +2770,7 @@ paths:
       summary: Transfer NFT Token
       tags:
         - Token operations
-  /v3/nft/mint/batch:
+  /v3/nft/mintBatch:
     post:
       description: |
         <h4>100 credits per API call on FLOW, 2 credits on another chains. Tatum covers the fee connected to the transaction costs in subscription credits for FLOW. This operation can be done on mainnet only for paid plans.</h4><br/>
@@ -2784,17 +2784,73 @@ paths:
         <li><b>Harmony.ONE</b></li>
         <li><b>Tron</b></li>
         <li><b>Flow</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
-        This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key.
+        This operation works in two modes.
+
+        First mode works just like other NFT endpoints. Every time the funds are transferred, the transaction must be signed with the corresponding private key.
         No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey
         or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production,
         <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request.
         Alternatively, using the Tatum client library for supported languages.
-        </p>
+
+        Second mode enables you to mint on any custom NFT ERC-721 smart contract, on which specified minter address is approved as a minter. You don't specify private key or signatureId, only minter address, from which the NFT will be minted.<br/>
+        It means you perform mint multiple NFT request with following body:
+        <pre>{
+           "to": ["0x80d8bac9a6901698b3749fe336bbd1385c1f98f2"],
+           "url": ["ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj"],
+           "tokenId": ["9876541124516"],
+           "contractAddress":"0xcd2ada00c48a27faa5cc67f9a1ed55b89ddf7f77",
+           "minter": "0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5",
+           "chain": "MATIC"
+        }</pre>
+        The blockchain fee of the performed transaction is paid from the address connected with built-in private key and is debitted in form of credits. The credits are debitted only if NFT mint requests are performed with paid API key plan.
+        We transform fee to the credits in accordance to the rates provided by the Tatum.
+        If you want to batch mint on ERC-721 contract which is not deployed via Tatum API, your smart contract must contain this method:
+        <pre>mintMultiple(address[] to, uint256[] tokenId, string[] uri): boolean</pre>
+        You can use addresses specified in the bellow table to be used as a minter.
+        <table>
+          <tr>
+            <th>Chain</th>
+            <th>Testnet address</th>
+            <th>Mainnet Address</th>
+          </tr>
+          <tr>
+            <td>MATIC</td>
+            <td>0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+          </tr>
+          <tr>
+            <td>BSC</td>
+            <td>0xc16ae5e8c985b906935a0cadf4e24f0400531883</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+          </tr>
+          <tr>
+            <td>ONE</td>
+            <td>0x8906f62d40293ddca77fdf6714c3f63265deddf0</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+          </tr>
+          <tr>
+            <td>ETH</td>
+            <td>0x51abC4c9e7BFfaA99bBE4dDC33d75067EBD0384F</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+          </tr>
+          <tr>
+            <td>CELO</td>
+            <td>0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+          </tr>
+          <tr>
+            <td>KLAY</td>
+            <td>0x80d8bac9a6901698b3749fe336bbd1385c1f98f2</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+          </tr>
+        </table>
+        If there are not enough coins on any testnet address, feel free to send coins there.</p>
       operationId: NftMintMultipleErc721
       parameters:
-        - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
+        - description: 'Type of Ethereum testnet. Defaults to Ropsten. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.'
           in: header
           name: x-testnet-type
           required: false
@@ -2809,6 +2865,170 @@ paths:
           application/json:
             schema:
               oneOf:
+                - type: object
+                  properties:
+                    chain:
+                      type: string
+                      example: ETH
+                      description: Chain to work with.
+                      enum:
+                        - ETH
+                        - MATIC
+                        - CELO
+                        - KCS
+                        - ONE
+                        - KLAY
+                        - BSC
+                    to:
+                      type: array
+                      description: Blockchain address to send NFT token to.
+                      example:
+                        - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      items:
+                        maxLength: 42
+                        minLength: 42
+                        type: string
+                    tokenId:
+                      type: array
+                      description: ID of token to be created.
+                      example:
+                        - '100000'
+                      items:
+                        type: string
+                        maxLength: 32
+                    minter:
+                      maxLength: 42
+                      description: 'Address of NFT minter, which will be used to mint the tokens. From this address, transaction fees will be deducted.'
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      type: string
+                    url:
+                      type: array
+                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
+                      example:
+                        - 'https://my_token_data.com'
+                      items:
+                        type: string
+                        maxLength: 256
+                    contractAddress:
+                      maxLength: 42
+                      minLength: 42
+                      description: Address of NFT token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      type: string
+                    feeCurrency:
+                      type: string
+                      description: 'Currency to pay for transaction gas, only valid for CELO chain.'
+                      enum:
+                        - CELO
+                  required:
+                    - to
+                    - chain
+                    - url
+                    - contractAddress
+                    - minter
+                    - tokenId
+                - type: object
+                  properties:
+                    chain:
+                      type: string
+                      example: ETH
+                      description: Chain to work with.
+                      enum:
+                        - ETH
+                        - MATIC
+                        - KCS
+                        - ONE
+                        - KLAY
+                        - BSC
+                    to:
+                      type: array
+                      description: Blockchain address to send NFT token to.
+                      example:
+                        - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      items:
+                        maxLength: 42
+                        minLength: 42
+                        type: string
+                    tokenId:
+                      type: array
+                      description: ID of token to be created.
+                      example:
+                        - '100000'
+                      items:
+                        type: string
+                        maxLength: 32
+                    url:
+                      type: array
+                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
+                      example:
+                        - 'https://my_token_data.com'
+                      items:
+                        type: string
+                        maxLength: 256
+                    authorAddresses:
+                      type: array
+                      description: 'List of addresses for every token, where royalty cashback for every transfer of this NFT will be send. Royalties are paid in native blockchain currency, ETH or BSC.'
+                      items:
+                        type: array
+                        items:
+                          type: string
+                          minLength: 42
+                          maxLength: 42
+                          description: Blockchain address to send royalties to
+                          example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                    cashbackValues:
+                      type: array
+                      description: 'List of values for every token, which will be paid as a royalty for author of the NFT token with every token transfer. This is exact value in native blockhain currency.'
+                      items:
+                        type: array
+                        items:
+                          type: string
+                          description: Value of the royalty to be paid.
+                          example: '0.5'
+                    contractAddress:
+                      maxLength: 42
+                      minLength: 42
+                      description: Address of NFT token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      type: string
+                    fromPrivateKey:
+                      type: string
+                      maxLength: 66
+                      example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+                      minLength: 66
+                      description: 'Private key of sender address. Private key, or signature Id must be present.'
+                    nonce:
+                      type: number
+                      minimum: 0
+                      description: 'Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
+
+
+                  required:
+                    - to
+                    - chain
+                    - url
+                    - contractAddress
+
+                    - fromPrivateKey
+
+                    - tokenId
                 - type: object
                   properties:
                     chain:
@@ -2865,7 +3085,7 @@ paths:
                     contractAddress:
                       maxLength: 36
                       description: Address of NFT token
-                      example: '0x687422eEA2cB73B5d3e246b782919AFc85'
+                      example: '0x687422eEA23e242bA5456b782919AFc85'
                       type: string
                     fromPrivateKey:
                       type: string
@@ -2892,95 +3112,8 @@ paths:
                     - fromPrivateKey
                     - feeCurrency
                     - tokenId
-                - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: CELO
-                      description: Chain to work with.
-                      enum:
-                        - CELO
-                    to:
-                      type: array
-                      description: Blockchain address to send NFT token to.
-                      example:
-                        - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      items:
-                        maxLength: 42
-                        minLength: 42
-                        type: string
-                    tokenId:
-                      type: array
-                      description: ID of token to be created.
-                      example:
-                        - '100000'
-                      items:
-                        type: string
-                        maxLength: 32
-                    url:
-                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
-                      type: array
-                      example:
-                        - 'https://my_token_data.com'
-                      items:
-                        type: string
-                        maxLength: 256
-                    authorAddresses:
-                      type: array
-                      description: 'List of addresses for every token, where royalty cashback for every transfer of this NFT will be send. Royalties are paid in native blockchain currency CELO.'
-                      items:
-                        type: array
-                        items:
-                          type: string
-                          minLength: 42
-                          maxLength: 42
-                          description: Blockchain address to send royalties to
-                          example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                    cashbackValues:
-                      type: array
-                      description: 'List of values for every token, which will be paid as a royalty for author of the NFT token with every token transfer. This is exact value in native blockhain currency.'
-                      items:
-                        type: array
-                        items:
-                          type: string
-                          description: Value of the royalty to be paid.
-                          example: '0.5'
-                    contractAddress:
-                      maxLength: 42
-                      minLength: 42
-                      description: Address of NFT token
-                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      type: string
-                    index:
-                      type: number
-                      minimum: 0
-                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
-                    signatureId:
-                      type: string
-                      minLength: 36
-                      maxLength: 36
-                      format: uuid
-                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
-                    nonce:
-                      type: number
-                      minimum: 0
-                      description: 'Nonce to be set to Celo transaction. If not present, last known nonce will be used.'
-                    feeCurrency:
-                      type: string
-                      description: Currency to pay for transaction gas
-                      enum:
-                        - CELO
-                        - CUSD
-                        - CEUR
-                  required:
-                    - chain
-                    - to
-                    - contractAddress
-                    - feeCurrency
-                    - tokenId
-                    - url
-                    - signatureId
+
+
                 - type: object
                   properties:
                     chain:
@@ -3038,276 +3171,6 @@ paths:
                     - fromPrivateKey
                     - feeLimit
                     - tokenId
-                - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: TRON
-                      description: Chain to work with.
-                      enum:
-                        - TRON
-                    to:
-                      type: array
-                      description: Blockchain address to send NFT token to.
-                      example:
-                        - TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
-                      items:
-                        maxLength: 34
-                        minLength: 34
-                        type: string
-                    account:
-                      maxLength: 34
-                      minLength: 34
-                      description: Blockchain address to perform transaction from
-                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
-                      type: string
-                    tokenId:
-                      type: array
-                      description: ID of token to be created.
-                      example:
-                        - '100000'
-                      items:
-                        type: string
-                        maxLength: 32
-                    url:
-                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
-                      type: array
-                      example:
-                        - 'https://my_token_data.com'
-                      items:
-                        type: string
-                        maxLength: 256
-                    contractAddress:
-                      maxLength: 34
-                      minLength: 34
-                      description: Address of NFT token
-                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
-                      type: string
-                    index:
-                      type: number
-                      minimum: 0
-                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
-                    signatureId:
-                      type: string
-                      minLength: 36
-                      maxLength: 36
-                      format: uuid
-                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
-                    feeLimit:
-                      type: number
-                      description: 'Max limit for fee to be paid, in TRX.'
-                      example: 600
-                  required:
-                    - chain
-                    - to
-                    - account
-                    - contractAddress
-                    - feeLimit
-                    - tokenId
-                    - url
-                    - signatureId
-                - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: ETH
-                      description: Chain to work with.
-                      enum:
-                        - ETH
-                        - MATIC
-                        - KCS
-                        - ONE
-                        - KLAY
-                        - BSC
-                    to:
-                      type: array
-                      description: Blockchain address to send NFT token to.
-                      example:
-                        - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      items:
-                        maxLength: 42
-                        minLength: 42
-                        type: string
-                    tokenId:
-                      type: array
-                      description: ID of token to be created.
-                      example:
-                        - '100000'
-                      items:
-                        type: string
-                        maxLength: 32
-                    url:
-                      type: array
-                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
-                      example:
-                        - 'https://my_token_data.com'
-                      items:
-                        type: string
-                        maxLength: 256
-                    authorAddresses:
-                      type: array
-                      description: 'List of addresses for every token, where royalty cashback for every transfer of this NFT will be send. Royalties are paid in native blockchain currency, ETH or BSC.'
-                      items:
-                        type: array
-                        items:
-                          type: string
-                          minLength: 42
-                          maxLength: 42
-                          description: Blockchain address to send royalties to
-                          example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                    cashbackValues:
-                      type: array
-                      description: 'List of values for every token, which will be paid as a royalty for author of the NFT token with every token transfer. This is exact value in native blockhain currency.'
-                      items:
-                        type: array
-                        items:
-                          type: string
-                          description: Value of the royalty to be paid.
-                          example: '0.5'
-                    contractAddress:
-                      maxLength: 42
-                      minLength: 42
-                      description: Address of NFT token
-                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      type: string
-                    fromPrivateKey:
-                      type: string
-                      maxLength: 66
-                      example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
-                      minLength: 66
-                      description: 'Private key of sender address. Private key, or signature Id must be present.'
-                    nonce:
-                      type: number
-                      minimum: 0
-                      description: 'Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.'
-                    fee:
-                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
-                      type: object
-                      required:
-                        - gasLimit
-                        - gasPrice
-                      properties:
-                        gasLimit:
-                          type: string
-                          description: Gas limit for transaction in gas price.
-                          pattern: '^[+]?\d+$'
-                          example: '40000'
-                        gasPrice:
-                          type: string
-                          description: Gas price in Gwei.
-                          pattern: '^[+]?\d+$'
-                          example: '20'
-                  required:
-                    - to
-                    - chain
-                    - url
-                    - contractAddress
-                    - fromPrivateKey
-                    - tokenId
-                - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: ETH
-                      description: Chain to work with.
-                      enum:
-                        - ETH
-                        - MATIC
-                        - KCS
-                        - ONE
-                        - KLAY
-                        - BSC
-                    to:
-                      type: array
-                      description: Blockchain address to send NFT token to.
-                      example:
-                        - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      items:
-                        maxLength: 42
-                        minLength: 42
-                        type: string
-                    tokenId:
-                      type: array
-                      description: ID of token to be created.
-                      example:
-                        - '100000'
-                      items:
-                        type: string
-                        maxLength: 32
-                    url:
-                      type: array
-                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
-                      example:
-                        - 'https://my_token_data.com'
-                      items:
-                        type: string
-                        maxLength: 256
-                    authorAddresses:
-                      type: array
-                      description: 'List of addresses for every token, where royalty cashback for every transfer of this NFT will be send. Royalties are paid in native blockchain currency, ETH or BSC.'
-                      items:
-                        type: array
-                        items:
-                          type: string
-                          minLength: 42
-                          maxLength: 42
-                          description: Blockchain address to send royalties to
-                          example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                    cashbackValues:
-                      type: array
-                      description: 'List of values for every token, which will be paid as a royalty for author of the NFT token with every token transfer. This is exact value in native blockhain currency.'
-                      items:
-                        type: array
-                        items:
-                          type: string
-                          description: Value of the royalty to be paid.
-                          example: '0.5'
-                    contractAddress:
-                      maxLength: 42
-                      minLength: 42
-                      description: Address of NFT token
-                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      type: string
-                    index:
-                      type: number
-                      minimum: 0
-                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
-                    signatureId:
-                      type: string
-                      minLength: 36
-                      maxLength: 36
-                      format: uuid
-                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
-                    nonce:
-                      type: number
-                      minimum: 0
-                      description: 'Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.'
-                    fee:
-                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
-                      type: object
-                      required:
-                        - gasLimit
-                        - gasPrice
-                      properties:
-                        gasLimit:
-                          type: string
-                          description: Gas limit for transaction in gas price.
-                          pattern: '^[+]?\d+$'
-                          example: '40000'
-                        gasPrice:
-                          type: string
-                          description: Gas price in Gwei.
-                          pattern: '^[+]?\d+$'
-                          example: '20'
-                  required:
-                    - to
-                    - chain
-                    - contractAddress
-                    - tokenId
-                    - url
-                    - signatureId
                 - type: object
                   properties:
                     chain:
@@ -3375,9 +3238,11 @@ paths:
                         maxLength: 18
                         minLength: 18
                         type: string
+
                     url:
                       type: array
                       description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
+
                       example:
                         - 'https://my_token_data.com'
                       items:
@@ -3406,6 +3271,16 @@ paths:
                       example: 0
                       type: integer
                       maximum: 2147483647
+
+
+
+
+
+
+
+
+
+
                   required:
                     - chain
                     - contractAddress
@@ -3413,7 +3288,342 @@ paths:
                     - mnemonic
                     - index
                     - to
+
+
+
+
                     - url
+
+                - type: object
+                  properties:
+                    chain:
+                      type: string
+                      example: ETH
+                      description: Chain to work with.
+                      enum:
+                        - ETH
+                        - MATIC
+                        - KCS
+                        - ONE
+                        - KLAY
+                        - BSC
+                    to:
+                      type: array
+                      description: Blockchain address to send NFT token to.
+                      example:
+                        - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      items:
+                        maxLength: 42
+                        minLength: 42
+                        type: string
+                    tokenId:
+                      type: array
+                      description: ID of token to be created.
+                      example:
+                        - '100000'
+                      items:
+                        type: string
+                        maxLength: 32
+                    url:
+                      type: array
+                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
+                      example:
+                        - 'https://my_token_data.com'
+                      items:
+                        type: string
+                        maxLength: 256
+                    authorAddresses:
+                      type: array
+                      description: 'List of addresses for every token, where royalty cashback for every transfer of this NFT will be send. Royalties are paid in native blockchain currency, ETH or BSC.'
+                      items:
+                        type: array
+                        items:
+                          type: string
+                          minLength: 42
+                          maxLength: 42
+                          description: Blockchain address to send royalties to
+                          example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                    cashbackValues:
+                      type: array
+                      description: 'List of values for every token, which will be paid as a royalty for author of the NFT token with every token transfer. This is exact value in native blockhain currency.'
+                      items:
+                        type: array
+                        items:
+                          type: string
+                          description: Value of the royalty to be paid.
+                          example: '0.5'
+                    contractAddress:
+                      maxLength: 42
+                      minLength: 42
+                      description: Address of NFT token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      type: string
+                    index:
+                      type: number
+                      minimum: 0
+                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
+                    signatureId:
+                      type: string
+                      minLength: 36
+                      maxLength: 36
+                      format: uuid
+                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    nonce:
+                      type: number
+                      minimum: 0
+                      description: 'Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.'
+                    fee:
+                      description: 'Custom defined fee. If not present, it will be calculated automatically.'
+                      type: object
+                      required:
+                        - gasLimit
+                        - gasPrice
+                      properties:
+                        gasLimit:
+                          type: string
+                          description: Gas limit for transaction in gas price.
+                          pattern: '^[+]?\d+$'
+                          example: '40000'
+                        gasPrice:
+                          type: string
+                          description: Gas price in Gwei.
+                          pattern: '^[+]?\d+$'
+                          example: '20'
+                  required:
+                    - to
+                    - chain
+
+                    - contractAddress
+
+                    - tokenId
+                    - url
+                    - signatureId
+                - type: object
+                  properties:
+                    chain:
+                      type: string
+                      example: CELO
+                      description: Chain to work with.
+                      enum:
+                        - CELO
+
+
+
+
+
+                    to:
+                      type: array
+                      description: Blockchain address to send NFT token to.
+                      example:
+                        - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      items:
+                        maxLength: 42
+                        minLength: 42
+                        type: string
+                    tokenId:
+                      type: array
+                      description: ID of token to be created.
+                      example:
+                        - '100000'
+                      items:
+                        type: string
+                        maxLength: 32
+                    url:
+                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
+                      type: array
+
+                      example:
+                        - 'https://my_token_data.com'
+                      items:
+                        type: string
+                        maxLength: 256
+                    authorAddresses:
+                      type: array
+                      description: 'List of addresses for every token, where royalty cashback for every transfer of this NFT will be send. Royalties are paid in native blockchain currency CELO.'
+                      items:
+                        type: array
+                        items:
+                          type: string
+                          minLength: 42
+                          maxLength: 42
+                          description: Blockchain address to send royalties to
+                          example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                    cashbackValues:
+                      type: array
+                      description: 'List of values for every token, which will be paid as a royalty for author of the NFT token with every token transfer. This is exact value in native blockhain currency.'
+                      items:
+                        type: array
+                        items:
+                          type: string
+                          description: Value of the royalty to be paid.
+                          example: '0.5'
+                    contractAddress:
+                      maxLength: 42
+                      minLength: 42
+                      description: Address of NFT token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      type: string
+                    index:
+                      type: number
+                      minimum: 0
+                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
+                    signatureId:
+                      type: string
+                      minLength: 36
+                      maxLength: 36
+                      format: uuid
+                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    nonce:
+                      type: number
+                      minimum: 0
+                      description: 'Nonce to be set to Celo transaction. If not present, last known nonce will be used.'
+                    feeCurrency:
+
+
+
+
+
+
+
+                      type: string
+                      description: Currency to pay for transaction gas
+                      enum:
+                        - CELO
+                        - CUSD
+                        - CEUR
+
+
+
+                  required:
+                    - chain
+                    - to
+
+                    - contractAddress
+                    - feeCurrency
+                    - tokenId
+                    - url
+                    - signatureId
+                - type: object
+                  properties:
+                    chain:
+                      type: string
+                      example: TRON
+                      description: Chain to work with.
+                      enum:
+                        - TRON
+                    to:
+                      type: array
+                      description: Blockchain address to send NFT token to.
+                      example:
+                        - TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+                      items:
+                        maxLength: 34
+                        minLength: 34
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        type: string
+                    account:
+                      maxLength: 34
+                      minLength: 34
+                      description: Blockchain address to perform transaction from
+                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+                      type: string
+                    tokenId:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      type: array
+                      description: ID of token to be created.
+                      example:
+                        - '100000'
+                      items:
+
+
+                        type: string
+                        maxLength: 32
+                    url:
+                      description: 'Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification for more details.'
+                      type: array
+
+                      example:
+                        - 'https://my_token_data.com'
+                      items:
+                        type: string
+                        maxLength: 256
+                    contractAddress:
+                      maxLength: 34
+                      minLength: 34
+                      description: Address of NFT token
+                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+                      type: string
+                    index:
+                      type: number
+                      minimum: 0
+                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
+                    signatureId:
+                      type: string
+                      minLength: 36
+                      maxLength: 36
+                      format: uuid
+                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    feeLimit:
+                      type: number
+                      description: 'Max limit for fee to be paid, in TRX.'
+                      example: 600
+
+
+
+
+
+
+                  required:
+                    - chain
+                    - to
+                    - account
+                    - contractAddress
+                    - feeLimit
+                    - tokenId
+
+
+                    - url
+                    - signatureId
                 - type: object
                   properties:
                     chain:
@@ -3648,7 +3858,7 @@ paths:
           description: Internal server error. There was an error on the server during the processing of the request.
       security:
         - X-Api-Key: []
-      summary: Mint NFT Multiple Tokens
+      summary: Mint Multiple NFT Tokens
       tags:
         - Token operations
   /v3/nft/burn:
@@ -3665,6 +3875,7 @@ paths:
         <li><b>Harmony.ONE</b></li>
         <li><b>Tron</b></li>
         <li><b>Flow</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Binance Smart Chain</b></li>
         <li><b>Algorand</b></li>
         </ul>
@@ -4287,6 +4498,7 @@ paths:
         <li><b>Polygon (Matic)</b></li>
         <li><b>Kcs (KCS)</b></li>
         <li><b>Celo</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
@@ -4633,6 +4845,7 @@ paths:
         <li><b>Celo</b></li>
         <li><b>Harmony.ONE</b></li>
         <li><b>Tron</b></li>
+        <li><b>Klaytn</b></li>
         <li><b>Binance Smart Chain</b></li>
         </ul>
         This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key.
