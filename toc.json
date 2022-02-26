@@ -38,6 +38,11 @@
       "type": "item",
       "title": "Custodial wallets",
       "uri": "reference/Custodial.yaml"
+    },
+        {
+      "type": "item",
+      "title": "Utilities",
+      "uri": "reference/Utilities.yaml"
     }
   ]
 }
