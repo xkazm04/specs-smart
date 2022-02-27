@@ -17,7 +17,7 @@ tags: [erc20, fungible, nft]
  **Flow** | - | ✓ | - | - | - | -
  **Harmony (ONE)** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
  **KuCoin (KCS)** | ✓ | ✓ | - | - | ✓ | -
-  **Klaytn ** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+ **Klaytn** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
  **Polygon (MATIC)** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
  **Tron** | ✓ | - | ✓ | - | - | ✓
  
