@@ -32,25 +32,25 @@ Create your own cryptocurrency, company utility token, or start a new meme revol
 
 **Popular features:**
 
-- [How to create Fungible token](https://developer.tatum.io/guides/blockchain/how-to-create-an-erc-20-token)
+- [How to create Fungible token](https://docs.tatum.io/guides/blockchain/how-to-create-an-erc-20-token)
 
 ## NFT
 Ride the shockwave of the NFT explosion and create your own NFTs without learning to code smart contracts. Allow users to mint and sell NFTs that automatically pay out royalties with every transfer, tokenize in-game assets, and quickly implement cutting-edge NFT solutions for any product vertical.
 
 **Popular features:**
-- [How to create NFTs](https://developer.tatum.io/guides/blockchain/how-to-create-nft-token) 
-- [Express NFT mint](https://developer.tatum.io/guides/blockchain/how-to-mint-nfts-with-1-api-call)
-- [Store metadata to IPFS and include it in an NFT](https://developer.tatum.io/guides/blockchain/how-to-store-metadata-to-ipfs-and-include-it-in-an-nft)
-- [Create NFT on Flow](https://developer.tatum.io/guides/blockchain/how-to-create-nfts-on-flow)
-- [Create NFT on Solana](https://developer.tatum.io/guides/blockchain/how-to-create-nfts-on-solana)
-- [Create Royalty NFT with fixed cashback](https://developer.tatum.io/guides/blockchain/how-to-create-tatum-nf-royal-ts)
-- [Create Royalty NFT with percentage cashback and provenance data](https://developer.tatum.io/guides/blockchain/how-to-create-royalty-nfts-with-percentage-cashback-and-provenance-data)
+- [How to create NFTs](https://docs.tatum.io/guides/blockchain/how-to-create-nft-token) 
+- [Express NFT mint](https://docs.tatum.io/guides/blockchain/how-to-mint-nfts-with-1-api-call)
+- [Store metadata to IPFS and include it in an NFT](https://docs.tatum.io/guides/blockchain/how-to-store-metadata-to-ipfs-and-include-it-in-an-nft)
+- [Create NFT on Flow](https://docs.tatum.io/guides/blockchain/how-to-create-nfts-on-flow)
+- [Create NFT on Solana](https://docs.tatum.io/guides/blockchain/how-to-create-nfts-on-solana)
+- [Create Royalty NFT with fixed cashback](https://docs.tatum.io/guides/blockchain/how-to-create-tatum-nf-royal-ts)
+- [Create Royalty NFT with percentage cashback and provenance data](https://docs.tatum.io/guides/blockchain/how-to-create-royalty-nfts-with-percentage-cashback-and-provenance-data)
 
 ### Marketplaces & Auctions
 
 Peer-to-peer NFT auction marketplaces like OpenSea allow users to create NFTs with metadata (pictures, videos, songs, 3D art etc.) and post listings to sell ERC-721 or ERC-1155 tokens. With our instant NFT marketplace and auction smart contracts, you can build the backend to your own peer-to-peer and custodial marketplaces and auctions completely on-chain with just a few lines of code. As soon as an NFT is purchased, the assets are automatically transferred to the seller and the NFT to the buyer, eliminating the logistical nightmare that often comes with building NFT marketplaces.
 
 **Popular features:**
-- [Create NFT marketplace](https://developer.tatum.io/tutorials/how-to-create-a-peer-to-peer-nft-marketplace)
-- [Create perr-to-peer auction](https://developer.tatum.io/tutorials/how-to-create-a-peer-to-peer-nft-auction)
+- [Create NFT marketplace](https://docs.tatum.io/tutorials/how-to-create-a-peer-to-peer-nft-marketplace)
+- [Create peer-to-peer auction](https://docs.tatum.io/tutorials/how-to-create-a-peer-to-peer-nft-auction)
 
