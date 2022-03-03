@@ -869,25 +869,25 @@ paths:
             <td>MATIC</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
+            <td>0x29768a03a62760EF462c1F0fFEC1C027B981B909</td>
           </tr>
           <tr>
             <td>BSC</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
+            <td>0x0A46D855221AF8F2336f3810e3d6013F10100577</td>
           </tr>
           <tr>
             <td>ONE</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
+            <td>0xA0BbB8140e9298E613Da57DDd269586473Bc94Be</td>
           </tr>
           <tr>
             <td>KLAY</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
+            <td>0x7c4e274387a9bc81f9de7502921fd0550583d3bb</td>
           </tr>
           <tr>
             <td>ETH</td>
@@ -899,7 +899,7 @@ paths:
             <td>CELO</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x6709bdda623af7eb152cb2fe2562ab7e031e564f</td>
+            <td>0xC49c2d52B3B4D0e3E52D1C8E0e10B13c82982E9d</td>
           </tr>
         If there are not enough coins on any testnet address, feel free to send coins here and help Tatum community.
         </table>
@@ -2912,17 +2912,17 @@ paths:
           <tr>
             <td>MATIC</td>
             <td>0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5</td>
-            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+            <td>0x29768a03a62760EF462c1F0fFEC1C027B981B909</td>
           </tr>
           <tr>
             <td>BSC</td>
             <td>0xc16ae5e8c985b906935a0cadf4e24f0400531883</td>
-            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+            <td>0x0A46D855221AF8F2336f3810e3d6013F10100577</td>
           </tr>
           <tr>
             <td>ONE</td>
             <td>0x8906f62d40293ddca77fdf6714c3f63265deddf0</td>
-            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+            <td>0xA0BbB8140e9298E613Da57DDd269586473Bc94Be</td>
           </tr>
           <tr>
             <td>ETH</td>
@@ -2932,12 +2932,12 @@ paths:
           <tr>
             <td>CELO</td>
             <td>0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F</td>
-            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+            <td>0xC49c2d52B3B4D0e3E52D1C8E0e10B13c82982E9d</td>
           </tr>
           <tr>
             <td>KLAY</td>
             <td>0x80d8bac9a6901698b3749fe336bbd1385c1f98f2</td>
-            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+            <td>0x7c4e274387a9bc81f9de7502921fd0550583d3bb</td>
           </tr>
         </table>
         If there are not enough coins on any testnet address, feel free to send coins there.</p>
