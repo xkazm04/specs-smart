@@ -51,6 +51,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: Auth - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -107,6 +108,7 @@ paths:
                     - auctionFee
                     - fromPrivateKey
                 - type: object
+                  title: Auth - SignatureId
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -168,6 +170,7 @@ paths:
                     - auctionFee
                     - signatureId
                 - type: object
+                  title: Celo - privateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -228,6 +231,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Celo - SignatureId
                   properties:
                     chain:
                       description: Blockchain to work with.
