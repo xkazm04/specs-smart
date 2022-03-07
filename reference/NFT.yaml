@@ -802,16 +802,16 @@ paths:
         It means if you perform mint NFT request with following body:
 
         <pre>{
-          "chain": "BSC",
-          "to": "0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F",
+          "chain": "ETH",
+          "to": "0xAe7D8842D0295B1f24a8842cBd5eB83Ae2fd0946",
           "url": "ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj"
         }</pre>
 
         The fields contractAddress, fromPrivateKey and tokenId will be internally filled in following way:
 
         <pre>{
-          "chain": "BSC",
-          "to": "0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F",
+          "chain": "ETH",
+          "to": "0xAe7D8842D0295B1f24a8842cBd5eB83Ae2fd0946",
           "url": "ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj",
           "fromPrivateKey": "{tatumBuiltInPrivateKey}",
           "tokenId": "{tatumBuiltInTokenId + 1}",
