@@ -6,6 +6,11 @@
       "uri": "docs/introduction.md"
     },
     {
+      "type": "item",
+      "title": "Mint NFT",
+      "uri": "docs/mint-nft.md"
+    },
+    {
       "type": "divider",
       "title": "APIS"
     },

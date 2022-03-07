@@ -4,8 +4,6 @@ tags: [erc20, fungible, nft]
 
 # Getting started with Token/Smart contracts
 
----
-
 ## Supported chains
 
 
