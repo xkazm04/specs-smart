@@ -2910,18 +2910,18 @@ paths:
           </tr>
           <tr>
             <td>MATIC</td>
-            <td>0xCd2AdA00c48A27FAa5Cc67F9A1ed55B89dDf7F77</td>
-            <td>0x03582C4C2cc7fC8dEd9377A3f8e94a4C9f72ecCe</td>
+            <td>0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
           </tr>
           <tr>
             <td>BSC</td>
-            <td>0xF73075aa67561791352fbEe8278115487Fd90ab6</td>
-            <td>0x4f83793245abE92cc8B978a16C898005c69e5e27</td>
+            <td>0xc16ae5e8c985b906935a0cadf4e24f0400531883</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
           </tr>
           <tr>
             <td>ONE</td>
-            <td>0x427ddbe3ad5e1e77e010c02e61e9bdef82dcaeea</td>
-            <td>0x559f11123bb892159cd33f652624e40e8b43d4ad</td>
+            <td>0x8906f62d40293ddca77fdf6714c3f63265deddf0</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
           </tr>
           <tr>
             <td>ETH</td>
@@ -2931,12 +2931,12 @@ paths:
           <tr>
             <td>CELO</td>
             <td>0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F</td>
-            <td>0x5F35fd593243B059cBf580D0335B1c21881a248b</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
           </tr>
           <tr>
             <td>KLAY</td>
-            <td>0x7EDB23Ea6D6233d09C264fa8657FA9305647Ae5e</td>
-            <td>0x44bf563b999823b22b0b165020f0e090aad88f11</td>
+            <td>0x80d8bac9a6901698b3749fe336bbd1385c1f98f2</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
           </tr>
         </table>
         If there are not enough coins on any testnet address, feel free to send coins there.</p>
