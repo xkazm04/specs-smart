@@ -832,7 +832,7 @@ paths:
           <tr>
             <td>MATIC</td>
             <td>Testnet</td>
-            <td>0xF73075aa67561791352fbEe8278115487Fd90ab6</td>
+            <td>0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5</td>
             <td>0xCd2AdA00c48A27FAa5Cc67F9A1ed55B89dDf7F77</td>
           </tr>
           <tr>
@@ -869,13 +869,13 @@ paths:
             <td>MATIC</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x29768a03a62760EF462c1F0fFEC1C027B981B909</td>
+            <td>0x03582C4C2cc7fC8dEd9377A3f8e94a4C9f72ecCe</td>
           </tr>
           <tr>
             <td>BSC</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x0A46D855221AF8F2336f3810e3d6013F10100577</td>
+            <td>0x4f83793245abE92cc8B978a16C898005c69e5e27</td>
           </tr>
           <tr>
             <td>ONE</td>
@@ -884,16 +884,10 @@ paths:
             <td>0x559f11123bb892159cd33f652624e40e8b43d4ad</td>
           </tr>
           <tr>
-            <td>KLAY</td>
-            <td>Mainnet</td>
-            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x7c4e274387a9bc81f9de7502921fd0550583d3bb</td>
-          </tr>
-          <tr>
             <td>ETH</td>
             <td>Mainnet</td>
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
-            <td>0x4f83793245abE92cc8B978a16C898005c69e5e27</td>
+            <td>0x789c00ed7ddd72a806dbac40df926df32fde3c2f</td>
           </tr>
           <tr>
             <td>CELO</td>
@@ -901,7 +895,12 @@ paths:
             <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
             <td>0x5F35fd593243B059cBf580D0335B1c21881a248b</td>
           </tr>
-        If there are not enough coins on any testnet address, feel free to send coins here and help Tatum community.
+          <tr>
+            <td>KLAY</td>
+            <td>Mainnet</td>
+            <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td>
+            <td>0x44bf563b999823b22b0b165020f0e090aad88f11</td>
+          </tr>
         </table>
         To add ETH mainnet smart contract contact sales@tatum.io.
         If there will be a low amount of coins on any testnet address you are free to send coins to the address. In future we will provide also addresses and smart contracts for the mainnet version.        </p>
