@@ -4228,7 +4228,7 @@ paths:
                     required:
                       - txId
                   - type: object
-                    title: Signature
+                    title: Signatur
                     properties:
                       signatureId:
                         format: uuid
