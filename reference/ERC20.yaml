@@ -550,7 +550,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
-                    title: PrivateKey
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1023,7 +1023,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
-                    title: PrivateKey
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1541,7 +1541,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
-                    title: PrivateKey
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1998,7 +1998,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
-                    title: PrivateKey
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -2810,7 +2810,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
-                    title: PrivateKey
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
