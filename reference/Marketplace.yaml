@@ -47,6 +47,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -103,6 +104,7 @@ paths:
                     - marketplaceFee
                     - fromPrivateKey
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -164,6 +166,7 @@ paths:
                     - marketplaceFee
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -224,6 +227,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -296,6 +300,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -308,6 +313,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
@@ -483,6 +489,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -580,6 +587,7 @@ paths:
                     - price
                     - fromPrivateKey
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -682,6 +690,7 @@ paths:
                     - price
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -783,6 +792,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -896,6 +906,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -908,6 +919,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -1081,6 +1093,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1154,6 +1167,7 @@ paths:
                     - amount
                     - fromPrivateKey
                 - type: object
+                  title: SignatureId
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1232,6 +1246,7 @@ paths:
                     - amount
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1309,6 +1324,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Celo - SignatureId
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1398,6 +1414,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1410,6 +1427,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
@@ -1584,6 +1602,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1645,6 +1664,7 @@ paths:
                     - listingId
                     - fromPrivateKey
                 - type: object
+                  title: SignatureId
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1705,6 +1725,7 @@ paths:
                     - listingId
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1764,6 +1785,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -1835,6 +1857,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1847,6 +1870,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -2765,6 +2789,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -2821,6 +2846,7 @@ paths:
                     - feeRecipient
                     - fromPrivateKey
                 - type: object
+                  title: SignatureId
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -2876,6 +2902,7 @@ paths:
                     - feeRecipient
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -2930,6 +2957,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -2996,6 +3024,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -3008,6 +3037,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
@@ -3173,6 +3203,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -3229,6 +3260,7 @@ paths:
                     - marketplaceFee
                     - fromPrivateKey
                 - type: object
+                  title: SignatureId
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -3284,6 +3316,7 @@ paths:
                     - marketplaceFee
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -3338,6 +3371,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       description: Blockchain to work with.
@@ -3404,6 +3438,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -3416,6 +3451,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
