@@ -43,6 +43,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: Estimate Fee
                   required:
                     - chain
                     - type
@@ -94,6 +95,7 @@ paths:
                       pattern: '^[+]?((\d+(\.\d*)?)|(\.\d+))$'
                       type: string
                 - type: object
+                  title: Estimate BatchMintNft
                   required:
                     - chain
                     - type
@@ -149,6 +151,7 @@ paths:
                         pattern: '^[+]?((\d+(\.\d*)?)|(\.\d+))$'
                         type: string
                 - type: object
+                  title: Estimate DeployCustodialWallet
                   required:
                     - chain
                     - type
@@ -177,6 +180,7 @@ paths:
                       maximum: 300
                       type: number
                 - type: object
+                  title: Estimate TransferFromCustodial
                   required:
                     - chain
                     - type
@@ -239,6 +243,7 @@ paths:
                       minimum: 0
                       maximum: 3
                 - type: object
+                  title: Estimate FeeFromAddress
                   required:
                     - chain
                     - type
@@ -285,6 +290,7 @@ paths:
                             minimum: 0
                             example: 0.02969944
                 - type: object
+                  title: Estimate FeeFromUTXO
                   required:
                     - chain
                     - type
@@ -352,6 +358,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: FeeBtc
                     required:
                       - fast
                       - medium
@@ -370,6 +377,7 @@ paths:
                         description: 'Transaction fee in BTC|LTC to be paid, if transaction should be included in next 7+ blocks.'
                         example: '0.002584'
                   - type: object
+                    title: FeeEth
                     required:
                       - gasLimit
                       - gasPrice
