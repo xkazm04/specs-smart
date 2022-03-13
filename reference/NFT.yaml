@@ -93,6 +93,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -173,6 +174,7 @@ paths:
 
                     - fromPrivateKey
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -236,6 +238,7 @@ paths:
                     - feeCurrency
                     - fromPrivateKey
                 - type: object
+                  title: Tron - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -272,6 +275,7 @@ paths:
                     - feeLimit
                     - fromPrivateKey
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -348,6 +352,7 @@ paths:
 
                     - signatureId
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -430,6 +435,7 @@ paths:
                     - feeCurrency
                     - signatureId
                 - type: object
+                  title: Tron - Signature
                   properties:
                     chain:
                       type: string
@@ -504,6 +510,7 @@ paths:
                     - feeLimit
                     - signatureId
                 - type: object
+                  title: Flow - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -528,6 +535,7 @@ paths:
                     - account
                     - privateKey
                 - type: object
+                  title: Flow - Mnemonic
                   properties:
                     chain:
                       type: string
@@ -558,6 +566,7 @@ paths:
                     - mnemonic
                     - index
                 - type: object
+                  title: Flow - Signature
                   properties:
                     chain:
                       type: string
@@ -922,6 +931,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: MintNftExpress
                   properties:
                     chain:
                       type: string
@@ -950,6 +960,7 @@ paths:
                     - chain
                     - url
                 - type: object
+                  title: MintNftMinter
                   properties:
                     chain:
                       type: string
@@ -996,6 +1007,7 @@ paths:
                     - minter
                     - tokenId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1080,6 +1092,7 @@ paths:
                     - url
                     - feeCurrency
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -1172,6 +1185,7 @@ paths:
                     - signatureId
                     - tokenId
                 - type: object
+                  title: Tron - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1236,6 +1250,7 @@ paths:
                     - fromPrivateKey
                     - tokenId
                 - type: object
+                  title: Tron - Signature
                   properties:
                     chain:
                       type: string
@@ -1312,6 +1327,7 @@ paths:
                     - signatureId
                     - tokenId
                 - type: object
+                  title: MintNft - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1413,6 +1429,7 @@ paths:
                     - fromPrivateKey
                     - tokenId
                 - type: object
+                  title: MintNft - Signature
                   properties:
                     chain:
                       type: string
@@ -1519,6 +1536,7 @@ paths:
                     - signatureId
                     - tokenId
                 - type: object
+                  title: Solana - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1601,6 +1619,7 @@ paths:
                     - from
                     - metadata
                 - type: object
+                  title: Solana - Signature
                   properties:
                     chain:
                       type: string
@@ -1684,6 +1703,7 @@ paths:
                     - metadata
                     - from
                 - type: object
+                  title: Flow - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1728,6 +1748,7 @@ paths:
                     - to
                     - url
                 - type: object
+                  title: Flow - Mnemonic
                   properties:
                     chain:
                       type: string
@@ -1778,6 +1799,7 @@ paths:
                     - to
                     - url
                 - type: object
+                  title: Flow - Signature
                   properties:
                     chain:
                       type: string
@@ -1835,6 +1857,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1847,6 +1870,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: FlowMintedResult
                     properties:
                       txId:
                         type: string
@@ -1857,6 +1881,7 @@ paths:
                         description: ID of the minted token
                         example: 12345
                   - type: object
+                    title: SolanaMintedResult
                     properties:
                       txId:
                         type: string
@@ -1871,6 +1896,7 @@ paths:
                         description: 'Address of the account owned by a mint recipient, which holds the minted NFT'
                         example: A8BSHPJcB5ZGCT6yo6pz2RYqnypTSpzTAFSBhtTQmsEE
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
@@ -2067,6 +2093,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     value:
                       type: string
@@ -2148,6 +2175,7 @@ paths:
                     - tokenId
                     - fromPrivateKey
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     value:
                       type: string
@@ -2213,6 +2241,7 @@ paths:
                     - tokenId
                     - fromPrivateKey
                 - type: object
+                  title: Tron - PrivateKey
                   properties:
                     value:
                       type: string
@@ -2259,6 +2288,7 @@ paths:
                     - fromPrivateKey
                     - feeLimit
                 - type: object
+                  title: Solana - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -2297,6 +2327,7 @@ paths:
                     - contractAddress
                     - fromPrivateKey
                 - type: object
+                  title: Flow - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -2341,6 +2372,7 @@ paths:
                     - to
                     - tokenId
                 - type: object
+                  title: Flow - Mnemonic
                   properties:
                     chain:
                       type: string
@@ -2391,6 +2423,7 @@ paths:
                     - to
                     - tokenId
                 - type: object
+                  title: Signature
                   properties:
                     value:
                       type: string
@@ -2476,6 +2509,7 @@ paths:
                     - signatureId
                     - tokenId
                 - type: object
+                  title: Celo - Signature
                   properties:
                     value:
                       type: string
@@ -2547,6 +2581,7 @@ paths:
                     - signatureId
                     - tokenId
                 - type: object
+                  title: Tron - Signature
                   properties:
                     value:
                       type: string
@@ -2605,6 +2640,7 @@ paths:
                     - tokenId
                     - account
                 - type: object
+                  title: Solana - Signature
                   properties:
                     chain:
                       type: string
@@ -2644,6 +2680,7 @@ paths:
                     - contractAddress
                     - signatureId
                 - type: object
+                  title: Flow - Signature
                   properties:
                     chain:
                       type: string
@@ -2701,6 +2738,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -2713,6 +2751,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -2958,6 +2997,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: External minter
                   properties:
                     chain:
                       type: string
@@ -3020,6 +3060,7 @@ paths:
                     - minter
                     - tokenId
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -3122,6 +3163,7 @@ paths:
 
                     - tokenId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -3207,6 +3249,7 @@ paths:
 
 
                 - type: object
+                  title: Tron - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -3264,6 +3307,7 @@ paths:
                     - feeLimit
                     - tokenId
                 - type: object
+                  title: Flow - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -3314,6 +3358,7 @@ paths:
                     - to
                     - url
                 - type: object
+                  title: Flow - Mnemonic
                   properties:
                     chain:
                       type: string
@@ -3387,6 +3432,7 @@ paths:
                     - url
 
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -3492,6 +3538,7 @@ paths:
                     - url
                     - signatureId
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -3598,6 +3645,7 @@ paths:
                     - url
                     - signatureId
                 - type: object
+                  title: Tron - Signature
                   properties:
                     chain:
                       type: string
@@ -3717,6 +3765,7 @@ paths:
                     - url
                     - signatureId
                 - type: object
+                  title: Flow - Signature
                   properties:
                     chain:
                       type: string
@@ -3780,6 +3829,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -3792,6 +3842,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: FlowMintedMultipleResult
                     properties:
                       txId:
                         type: string
@@ -3804,6 +3855,7 @@ paths:
                           description: ID of the minted token
                           example: 12345
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
@@ -3995,177 +4047,7 @@ paths:
             schema:
               oneOf:
                 - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: CELO
-                      description: Chain to work with.
-                      enum:
-                        - CELO
-                    tokenId:
-                      description: ID of token to be destroyed.
-                      example: '100000'
-                      type: string
-                      maxLength: 32
-                    contractAddress:
-                      maxLength: 42
-                      minLength: 42
-                      description: Address of NFT token
-                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      type: string
-                    fromPrivateKey:
-                      type: string
-                      maxLength: 66
-                      example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
-                      minLength: 66
-                      description: 'Private key of sender address. Private key, or signature Id must be present.'
-                    nonce:
-                      type: number
-                      minimum: 0
-                      description: 'Nonce to be set to Celo transaction. If not present, last known nonce will be used.'
-                    feeCurrency:
-                      type: string
-                      description: Currency to pay for transaction gas
-                      enum:
-                        - CELO
-                        - CUSD
-                        - CEUR
-                  required:
-                    - chain
-                    - contractAddress
-                    - feeCurrency
-                    - fromPrivateKey
-                    - tokenId
-                - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: CELO
-                      description: Chain to work with.
-                      enum:
-                        - CELO
-                    tokenId:
-                      description: ID of token to be destroyed.
-                      example: '100000'
-                      type: string
-                      maxLength: 32
-                    contractAddress:
-                      maxLength: 42
-                      minLength: 42
-                      description: Address of NFT token
-                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-                      type: string
-                    index:
-                      type: number
-                      minimum: 0
-                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
-                    signatureId:
-                      type: string
-                      minLength: 36
-                      maxLength: 36
-                      format: uuid
-                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
-                    nonce:
-                      type: number
-                      minimum: 0
-                      description: 'Nonce to be set to Celo transaction. If not present, last known nonce will be used.'
-                    feeCurrency:
-                      type: string
-                      description: Currency to pay for transaction gas
-                      enum:
-                        - CELO
-                        - CUSD
-                        - CEUR
-                  required:
-                    - chain
-                    - feeCurrency
-                    - contractAddress
-                    - tokenId
-                    - signatureId
-                - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: TRON
-                      description: Chain to work with.
-                      enum:
-                        - TRON
-                    tokenId:
-                      description: ID of token to be destroyed.
-                      example: '100000'
-                      type: string
-                      maxLength: 32
-                    contractAddress:
-                      maxLength: 34
-                      minLength: 34
-                      description: Address of NFT token
-                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
-                      type: string
-                    fromPrivateKey:
-                      type: string
-                      maxLength: 64
-                      example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
-                      minLength: 64
-                      description: 'Private key of sender address. Private key, or signature Id must be present.'
-                    feeLimit:
-                      type: number
-                      description: 'Max limit for fee to be paid, in TRX.'
-                      example: 600
-                  required:
-                    - chain
-                    - contractAddress
-                    - feeLimit
-                    - fromPrivateKey
-                    - tokenId
-                - type: object
-                  properties:
-                    chain:
-                      type: string
-                      example: TRON
-                      description: Chain to work with.
-                      enum:
-                        - TRON
-                    account:
-                      maxLength: 34
-                      minLength: 34
-                      description: Blockchain address to perform transaction from
-                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
-                      type: string
-                    tokenId:
-                      description: ID of token to be destroyed.
-                      example: '100000'
-                      type: string
-                      maxLength: 32
-                    contractAddress:
-                      maxLength: 34
-                      minLength: 34
-                      description: Address of NFT token
-                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
-                      type: string
-                    index:
-                      type: number
-                      minimum: 0
-                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
-                    signatureId:
-                      type: string
-                      minLength: 36
-                      maxLength: 36
-                      format: uuid
-                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
-                    feeLimit:
-                      type: number
-                      description: 'Max limit for fee to be paid, in TRX.'
-                      example: 600
-                  required:
-                    - chain
-                    - feeLimit
-                    - contractAddress
-                    - tokenId
-                    - signatureId
-                    - account
-                - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -4225,6 +4107,7 @@ paths:
                     - fromPrivateKey
                     - tokenId
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -4288,6 +4171,182 @@ paths:
                     - tokenId
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
+                  properties:
+                    chain:
+                      type: string
+                      example: CELO
+                      description: Chain to work with.
+                      enum:
+                        - CELO
+                    tokenId:
+                      description: ID of token to be destroyed.
+                      example: '100000'
+                      type: string
+                      maxLength: 32
+                    contractAddress:
+                      maxLength: 42
+                      minLength: 42
+                      description: Address of NFT token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      type: string
+                    fromPrivateKey:
+                      type: string
+                      maxLength: 66
+                      example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+                      minLength: 66
+                      description: 'Private key of sender address. Private key, or signature Id must be present.'
+                    nonce:
+                      type: number
+                      minimum: 0
+                      description: 'Nonce to be set to Celo transaction. If not present, last known nonce will be used.'
+                    feeCurrency:
+                      type: string
+                      description: Currency to pay for transaction gas
+                      enum:
+                        - CELO
+                        - CUSD
+                        - CEUR
+                  required:
+                    - chain
+                    - contractAddress
+                    - feeCurrency
+                    - fromPrivateKey
+                    - tokenId
+                - type: object
+                  title: Celo - Signature
+                  properties:
+                    chain:
+                      type: string
+                      example: CELO
+                      description: Chain to work with.
+                      enum:
+                        - CELO
+                    tokenId:
+                      description: ID of token to be destroyed.
+                      example: '100000'
+                      type: string
+                      maxLength: 32
+                    contractAddress:
+                      maxLength: 42
+                      minLength: 42
+                      description: Address of NFT token
+                      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+                      type: string
+                    index:
+                      type: number
+                      minimum: 0
+                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
+                    signatureId:
+                      type: string
+                      minLength: 36
+                      maxLength: 36
+                      format: uuid
+                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    nonce:
+                      type: number
+                      minimum: 0
+                      description: 'Nonce to be set to Celo transaction. If not present, last known nonce will be used.'
+                    feeCurrency:
+                      type: string
+                      description: Currency to pay for transaction gas
+                      enum:
+                        - CELO
+                        - CUSD
+                        - CEUR
+                  required:
+                    - chain
+                    - feeCurrency
+                    - contractAddress
+                    - tokenId
+                    - signatureId
+                - type: object
+                  title: Tron - PrivateKey
+                  properties:
+                    chain:
+                      type: string
+                      example: TRON
+                      description: Chain to work with.
+                      enum:
+                        - TRON
+                    tokenId:
+                      description: ID of token to be destroyed.
+                      example: '100000'
+                      type: string
+                      maxLength: 32
+                    contractAddress:
+                      maxLength: 34
+                      minLength: 34
+                      description: Address of NFT token
+                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+                      type: string
+                    fromPrivateKey:
+                      type: string
+                      maxLength: 64
+                      example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
+                      minLength: 64
+                      description: 'Private key of sender address. Private key, or signature Id must be present.'
+                    feeLimit:
+                      type: number
+                      description: 'Max limit for fee to be paid, in TRX.'
+                      example: 600
+                  required:
+                    - chain
+                    - contractAddress
+                    - feeLimit
+                    - fromPrivateKey
+                    - tokenId
+                - type: object
+                  title: Tron - Signature
+                  properties:
+                    chain:
+                      type: string
+                      example: TRON
+                      description: Chain to work with.
+                      enum:
+                        - TRON
+                    account:
+                      maxLength: 34
+                      minLength: 34
+                      description: Blockchain address to perform transaction from
+                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+                      type: string
+                    tokenId:
+                      description: ID of token to be destroyed.
+                      example: '100000'
+                      type: string
+                      maxLength: 32
+                    contractAddress:
+                      maxLength: 34
+                      minLength: 34
+                      description: Address of NFT token
+                      example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+                      type: string
+                    index:
+                      type: number
+                      minimum: 0
+                      description: 'If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.'
+                    signatureId:
+                      type: string
+                      minLength: 36
+                      maxLength: 36
+                      format: uuid
+                      example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+                      description: 'Identifier of the private key associated in signing application. Private key, or signature Id must be present.'
+                    feeLimit:
+                      type: number
+                      description: 'Max limit for fee to be paid, in TRX.'
+                      example: 600
+                  required:
+                    - chain
+                    - feeLimit
+                    - contractAddress
+                    - tokenId
+                    - signatureId
+                    - account
+                - type: object
+                  title: Flow - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -4325,6 +4384,7 @@ paths:
                     - privateKey
                     - tokenId
                 - type: object
+                  title: Flow - Signature
                   properties:
                     chain:
                       type: string
@@ -4368,6 +4428,7 @@ paths:
                     - index
                     - tokenId
                 - type: object
+                  title: Flow - Mnemonic
                   properties:
                     chain:
                       type: string
@@ -4418,6 +4479,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -4430,6 +4492,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -4618,6 +4681,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -4684,6 +4748,7 @@ paths:
                     - contractAddress
                     - fromPrivateKey
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -4762,6 +4827,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -4774,6 +4840,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
@@ -4964,6 +5031,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -5011,6 +5079,7 @@ paths:
                     - tokenId
                     - cashbackValue
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -5063,6 +5132,7 @@ paths:
                     - signatureId
                     - cashbackValue
                 - type: object
+                  title: Tron - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -5103,6 +5173,7 @@ paths:
                     - tokenId
                     - cashbackValue
                 - type: object
+                  title: Tron - Signature
                   properties:
                     chain:
                       type: string
@@ -5154,6 +5225,7 @@ paths:
                     - signatureId
                     - cashbackValue
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -5217,6 +5289,7 @@ paths:
                     - fromPrivateKey
                     - tokenId
                 - type: object
+                  title: SignatureId
                   properties:
                     chain:
                       type: string
@@ -5292,6 +5365,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: TransactionHashKMS
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -5304,6 +5378,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: SignatureId
                     properties:
                       signatureId:
                         format: uuid
