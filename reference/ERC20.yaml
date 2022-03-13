@@ -64,7 +64,7 @@ paths:
             schema:
               oneOf:
                 - type: object
-                  title: DeployErc20
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -151,6 +151,7 @@ paths:
                     - fromPrivateKey
                     - digits
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -234,6 +235,7 @@ paths:
                     - signatureId
                     - digits
                 - type: object
+                  title: KuCoin - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -314,6 +316,7 @@ paths:
                     - fromPrivateKey
                     - digits
                 - type: object
+                  title: KuCoin - Signature
                   properties:
                     chain:
                       type: string
@@ -395,6 +398,7 @@ paths:
                     - signatureId
                     - digits
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -466,6 +470,7 @@ paths:
                     - digits
                     - feeCurrency
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -545,6 +550,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: PrivateKey
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -557,6 +563,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -731,6 +738,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -777,6 +785,7 @@ paths:
                     - contractAddress
                     - fromPrivateKey
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -821,6 +830,7 @@ paths:
                     - contractAddress
                     - signatureId
                 - type: object
+                  title: KuCoin - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -862,6 +872,7 @@ paths:
                     - contractAddress
                     - fromPrivateKey
                 - type: object
+                  title: KuCoin - Signature
                   properties:
                     chain:
                       type: string
@@ -904,6 +915,7 @@ paths:
                     - contractAddress
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -953,6 +965,7 @@ paths:
                     - contractAddress
                     - fromPrivateKey
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -1010,6 +1023,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: PrivateKey
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1022,6 +1036,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -1196,6 +1211,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1253,6 +1269,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -1308,6 +1325,7 @@ paths:
                     - signatureId
                     - amount
                 - type: object
+                  title: KuCoin - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1359,6 +1377,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: KuCoin - Signature
                   properties:
                     chain:
                       type: string
@@ -1411,6 +1430,7 @@ paths:
                     - signatureId
                     - amount
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1453,6 +1473,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -1520,6 +1541,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: PrivateKey
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1532,6 +1554,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -1706,6 +1729,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1768,6 +1792,7 @@ paths:
                     - contractAddress
                     - fromPrivateKey
                 - type: object
+                  title: Signature
                   properties:
                     chain:
                       type: string
@@ -1831,6 +1856,7 @@ paths:
                     - contractAddress
                     - signatureId
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -1897,6 +1923,7 @@ paths:
                     - contractAddress
                     - fromPrivateKey
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -1971,6 +1998,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: PrivateKey
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -1983,6 +2011,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
@@ -2160,6 +2189,7 @@ paths:
             schema:
               oneOf:
                 - type: object
+                  title: Algo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -2198,6 +2228,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: Algo - Signature
                   properties:
                     chain:
                       type: string
@@ -2244,6 +2275,7 @@ paths:
                     - amount
                     - from
                 - type: object
+                  title: EVM - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -2315,6 +2347,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: EVM - Signature
                   properties:
                     chain:
                       type: string
@@ -2387,6 +2420,7 @@ paths:
                     - signatureId
                     - amount
                 - type: object
+                  title: KuCoin - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -2453,6 +2487,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: KuCoin - Signature
                   properties:
                     chain:
                       type: string
@@ -2520,6 +2555,7 @@ paths:
                     - signatureId
                     - amount
                 - type: object
+                  title: BSC - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -2585,6 +2621,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: BSC - Signature 
                   properties:
                     chain:
                       type: string
@@ -2651,6 +2688,7 @@ paths:
                     - signatureId
                     - amount
                 - type: object
+                  title: Celo - PrivateKey
                   properties:
                     chain:
                       type: string
@@ -2707,6 +2745,7 @@ paths:
                     - fromPrivateKey
                     - amount
                 - type: object
+                  title: Celo - Signature
                   properties:
                     chain:
                       type: string
@@ -2771,6 +2810,7 @@ paths:
               schema:
                 oneOf:
                   - type: object
+                    title: PrivateKey
                     properties:
                       txId:
                         description: TX hash of successful transaction.
@@ -2783,6 +2823,7 @@ paths:
                     required:
                       - txId
                   - type: object
+                    title: Signature
                     properties:
                       signatureId:
                         format: uuid
