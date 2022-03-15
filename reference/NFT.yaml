@@ -757,7 +757,7 @@ paths:
           description: Internal server error. There was an error on the server during the processing of the request.
       security:
         - X-Api-Key: []
-      summary: Deploy NFT Smart Contract.
+      summary: Deploy NFT Smart Contract
       tags:
         - Token operations
   /v3/nft/mint:
