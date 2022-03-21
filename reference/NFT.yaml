@@ -77,6 +77,13 @@ paths:
         </p>
       operationId: NftDeployErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: 'Type of Ethereum testnet. Defaults to Ropsten. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.'
           in: header
           name: x-testnet-type
@@ -915,6 +922,13 @@ paths:
         If there will be a low amount of coins on any testnet address you are free to send coins to the address. In future we will provide also addresses and smart contracts for the mainnet version.        </p>
       operationId: NftMintErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations. For mainnet this value is ignored.
           in: header
           name: x-testnet-type
@@ -2077,6 +2091,13 @@ paths:
         </p>
       operationId: NftTransferErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -2981,6 +3002,13 @@ paths:
         If there are not enough coins on any testnet address, feel free to send coins there.</p>
       operationId: NftMintMultipleErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: 'Type of Ethereum testnet. Defaults to Ropsten. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.'
           in: header
           name: x-testnet-type
@@ -4031,6 +4059,13 @@ paths:
         </p>
       operationId: NftBurnErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -4665,6 +4700,13 @@ paths:
         </p>
       operationId: NftAddMinter
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -5015,6 +5057,13 @@ paths:
         </p>
       operationId: NftUpdateCashbackErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -5533,6 +5582,13 @@ paths:
       description: <h4>1 credit per API call.</h4><br/><p>Get NFT transactions by address. This includes incoming and outgoing transactions for the address.</p>
       operationId: NftGetTransactionByAddress
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -5750,6 +5806,13 @@ paths:
       description: <h4>1 credit per API call.</h4><br/><p>Get NFT transactions by token. This includes incoming and outgoing transactions for the token.</p>
       operationId: NftGetTransactionByToken
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -5971,6 +6034,13 @@ paths:
       deprecated: true
       operationId: NftGetContractAddress
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -6161,6 +6231,13 @@ paths:
       description: <h4>1 credit per API call.</h4><br/><p>Get NFT transaction by transaction hash.</p>
       operationId: NftGetTransactErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -6630,6 +6707,13 @@ paths:
         <h4>1 credit per API call + 5 credits for each listed token.</h4><br/><p>Get all minted NFTs in the collection. Returns all NFTs this contract minted.</p>
       operationId: NftGetTokensByCollectionErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -6842,6 +6926,13 @@ paths:
         <h4>1 credit per API call + 5 credits for each owned token.</h4><br/><p>Get NFTs on address. Returns all NFTs this address holds.</p>
       operationId: NftGetTokensByAddressErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7046,6 +7137,13 @@ paths:
         <h4>1 credit per API call.</h4><br/><p>Get NFTs on Account. Returns tokenIDs of tokens Account holds. This method is valid only for tokens deplyed using Tatum API - it reads data from the smart contract.</p>
       operationId: NftGetBalanceErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7241,6 +7339,13 @@ paths:
       description: '<h4>1 credit per API call.</h4><br/><p>Get NFT token provenance data, valid only for provenance contract.</p>'
       operationId: NftGetProvenanceDataErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7435,6 +7540,13 @@ paths:
       description: <h4>1 credit per API call.</h4><br/><p>Get NFT token metadata.</p>
       operationId: NftGetMetadataErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7640,6 +7752,13 @@ paths:
       description: <h4>1 credit per API call.</h4><br/><p>Get NFT token royalty.</p>
       operationId: NftGetRoyaltyErc721
       parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7849,6 +7968,11 @@ components:
         To maintain the highest security level, Tatum requires X-API-Key HTTP header.
         This X-API-Key represents identification of the plan and can be used by 1 developer or per environment.
         Each X-API-Key is bound to the test or production blockchains.
+
+        Connecting without an X-API-Key results in the creation of an API Key tied to your IP Address.
+        This API Key is limited to 5req/s and 10M credits, these limits are renewed the 1st day of each month and are applicable to both testnet and mainnet.
+        To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls, otherwise the api key will default to mainnet.
+        You do not need to supply an API key in the X-API-Key header.
       in: header
       name: x-api-key
       type: apiKey
