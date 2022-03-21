@@ -2901,7 +2901,7 @@ paths:
       summary: Transfer NFT Token
       tags:
         - Token operations
-  /v3/nft/mintBatch:
+  /v3/nft/mint/batch:
     post:
       description: |
         <h4>100 credits per API call on FLOW, 2 credits on another chains. Tatum covers the fee connected to the transaction costs in subscription credits for FLOW. This operation can be done on mainnet only for paid plans.</h4><br/>
