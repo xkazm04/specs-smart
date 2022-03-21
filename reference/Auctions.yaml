@@ -296,6 +296,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -897,6 +905,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -1361,6 +1377,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -1870,6 +1894,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -2333,6 +2365,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -2810,6 +2850,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -3007,6 +3055,13 @@ paths:
           schema:
             type: string
             example: '123456'
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -3220,6 +3275,13 @@ paths:
           schema:
             type: string
             example: '0xe6e7340394958674cdf8606936d292f565e4ecc4'
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -3394,6 +3456,13 @@ paths:
           schema:
             type: string
             example: '0xe6e7340394958674cdf8606936d292f565e4ecc4'
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -3795,6 +3864,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -4209,6 +4286,14 @@ paths:
                     - feeCurrency
                     - signatureId
         required: true
+      parameters:
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -4410,6 +4495,13 @@ paths:
           schema:
             type: string
             example: '2021-09-17T07:55:54Z'
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: boolean
+            example: false
       responses:
         '200':
           content:
@@ -4560,6 +4652,11 @@ components:
         To maintain the highest security level, Tatum requires X-API-Key HTTP header.
         This X-API-Key represents identification of the plan and can be used by 1 developer or per environment.
         Each X-API-Key is bound to the test or production blockchains.
+
+        Connecting without an X-API-Key results in the creation of an API Key tied to your IP Address.
+        This API Key is limited to 5req/s and 10M credits, these limits are renewed the 1st day of each month and are applicable to both testnet and mainnet.
+        To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls, otherwise the api key will default to mainnet.
+        You do not need to supply an API key in the X-API-Key header.
       in: header
       name: x-api-key
       type: apiKey
