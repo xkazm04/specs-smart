@@ -44,8 +44,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       requestBody:
         content:
           application/json:
@@ -559,8 +559,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Transaction hash
           in: path
           name: hash

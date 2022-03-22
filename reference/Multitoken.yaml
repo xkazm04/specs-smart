@@ -68,8 +68,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -475,8 +475,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -977,8 +977,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -1535,8 +1535,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -2023,8 +2023,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -2537,8 +2537,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -3030,8 +3030,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -3547,8 +3547,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Type of testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -3885,8 +3885,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -4123,8 +4123,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -4318,8 +4318,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -4691,8 +4691,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -4898,8 +4898,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -5107,8 +5107,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -5317,8 +5317,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
         - description: Blockchain to work with
           in: path
           name: chain

@@ -64,8 +64,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       requestBody:
         content:
           application/json:
@@ -745,8 +745,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       operationId: Erc20Mint
       requestBody:
         content:
@@ -1226,8 +1226,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       operationId: Erc20Burn
       requestBody:
         content:
@@ -1752,8 +1752,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       operationId: Erc20Approve
       requestBody:
         content:
@@ -2220,8 +2220,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       operationId: Erc20Transfer
       requestBody:
         content:
@@ -3081,8 +3081,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       responses:
         '200':
           content:
@@ -3283,8 +3283,8 @@ paths:
           required: false
           schema:
             type: string
-            example: mainnet
-            default: testnet
+            example: testnet
+            default: mainnet
       responses:
         '200':
           content:
