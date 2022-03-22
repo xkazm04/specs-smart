@@ -82,8 +82,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: 'Type of Ethereum testnet. Defaults to Ropsten. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.'
           in: header
           name: x-testnet-type
@@ -927,8 +928,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations. For mainnet this value is ignored.
           in: header
           name: x-testnet-type
@@ -2096,8 +2098,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -3007,8 +3010,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: 'Type of Ethereum testnet. Defaults to Ropsten. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.'
           in: header
           name: x-testnet-type
@@ -4064,8 +4068,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -4705,8 +4710,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -5062,8 +5068,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Type of Ethereum testnet. Defaults to ropsten. Valid only for ETH invocations.
           in: header
           name: x-testnet-type
@@ -5587,8 +5594,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -5811,8 +5819,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -6039,8 +6048,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -6236,8 +6246,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -6712,8 +6723,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -6931,8 +6943,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7142,8 +7155,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7344,8 +7358,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7545,8 +7560,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain
@@ -7757,8 +7773,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
         - description: Blockchain to work with
           in: path
           name: chain

@@ -63,8 +63,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
       requestBody:
         content:
           application/json:
@@ -743,8 +744,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
       operationId: Erc20Mint
       requestBody:
         content:
@@ -1223,8 +1225,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
       operationId: Erc20Burn
       requestBody:
         content:
@@ -1748,8 +1751,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
       operationId: Erc20Approve
       requestBody:
         content:
@@ -2215,8 +2219,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
       operationId: Erc20Transfer
       requestBody:
         content:
@@ -3075,8 +3080,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
       responses:
         '200':
           content:
@@ -3276,8 +3282,9 @@ paths:
           name: type
           required: false
           schema:
-            type: boolean
-            example: false
+            type: string
+            example: mainnet
+            default: testnet
       responses:
         '200':
           content:
