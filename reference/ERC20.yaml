@@ -3008,29 +3008,37 @@ paths:
       summary: Transfer ERC20 Token
       tags:
         - Token operations 
-  /v3/blockchain/token/address/{chain}/{address}:
+  '/v3/blockchain/token/address/{chain}/{address}':
     get:
-      description: '<h4>1 credit per API call.</h4><br/><p>Get ERC20 Account balance. Returns number of tokens Account holds.</p>'
+      description: <h4>1 credit per API call.</h4><br/><p>Get ERC20 Account balance. Returns number of tokens Account holds.</p>
       operationId: Erc20GetBalanceAddress
       parameters:
-        - description: 'Network name'
+        - description: Network name
           in: path
           name: chain
           required: true
           schema:
             type: string
-            example: 'CELO'
+            example: CELO
             enum:
               - CELO
               - ETH
               - MATIC
-        - description: 'Account address'
+        - description: Account address
           in: path
           name: address
           required: true
           schema:
             type: string
             example: '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B'
+        - description: For connection without API key. To differentiate between testnet and mainnet, please supply a ?type=testnet|mainnet query parameter with your calls
+          in: query
+          name: type
+          required: false
+          schema:
+            type: string
+            example: testnet
+            default: mainnet
       responses:
         '200':
           content:
@@ -3086,6 +3094,18 @@ paths:
                           type: string
                           description: Property name of the target object which validation is wrong
                           example: property1
+                        constraints:
+                          type: object
+                          additionalProperties: true
+                          description: 'Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint.'
+                          example:
+                            min: property1 must not be less than 50000
+                required:
+                  - errorCode
+                  - message
+                  - statusCode
+                  - data
+                type: object
           description: Bad Request. Validation failed for the given object in the HTTP Body or Request parameters.
         '401':
           content:
@@ -3129,6 +3149,24 @@ paths:
                       - statusCode
                     type: object
           description: Unauthorized. Not valid or inactive subscription key present in the HTTP Header.
+        '403':
+          description: 'Forbidden. The request is authenticated, but it is not possible to required perform operation due to logical error or invalid permissions.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    example: Forbidden
+                    description: Forbidden
+                    type: string
+                  statusCode:
+                    example: 403
+                    description: '403'
+                    type: number
+                required:
+                  - statusCode
+                  - message
+                type: object
         '500':
           content:
             application/json:
