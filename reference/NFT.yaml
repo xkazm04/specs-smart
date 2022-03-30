@@ -6734,9 +6734,10 @@ paths:
             type: string
             example: ETH
             enum:
-              - CELO
-              - MATIC
               - ETH
+              - MATIC
+              - CELO
+              - ALGO
         - description: Max number of items per page is 50.
           in: query
           name: pageSize
