@@ -6737,7 +6737,6 @@ paths:
               - ETH
               - MATIC
               - CELO
-              - ALGO
         - description: Max number of items per page is 50.
           in: query
           name: pageSize
